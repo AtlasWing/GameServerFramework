@@ -1,0 +1,18 @@
+#新建数据库时权限相关设置，涉及到的所有密码需要修改成真实的
+
+use mysql;
+
+#删掉其他IP用root登录的权限
+delete from user where user='root' and host='%';
+
+#开通内网连接外网的IP允许密码登录
+grant create,delete,drop,alter,insert,select,update,index,event,execute,create routine,alter routine,super,trigger,lock tables on *.* to root@'218.247.145.3' identified by '123456';
+
+#新增游戏用户，相应权限，要求密码登录，注意IP和用户密码需要更改
+grant create,delete,drop,alter,insert,select,update,index,event,execute,create routine,alter routine,super,trigger,lock tables on *.* to ddtgame@'localhost' identified by '123456';
+grant create,delete,drop,alter,insert,select,update,index,event,execute,create routine,alter routine,super,trigger,lock tables on *.* to ddtgame@'127.0.0.1' identified by '123456';
+grant create,delete,drop,alter,insert,select,update,index,event,execute,create routine,alter routine,super,trigger,lock tables on *.* to ddtgame@'10.1.101.%' identified by '123456';
+grant create,delete,drop,alter,insert,select,update,index,event,execute,create routine,alter routine,super,trigger,lock tables on *.* to ddtgame@'218.247.145.3' identified by '123456';
+
+#最后刷新下权限设置
+flush privileges;

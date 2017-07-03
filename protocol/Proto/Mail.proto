@@ -1,0 +1,92 @@
+package protocol.mail;
+
+/// @brief 邮件头
+message MailTitle
+{
+    required uint32 createTimeInSec=   1;///< 邮件创建时间
+    required uint32 mailType      =   2;///< 邮件类型
+    required uint32 mailID        =   3;///< 邮件ID
+    optional uint32 fromID        =   4;///< 发送者ID
+    optional uint32 destID        =   5;///< 接受者ID
+    required uint32 mailState     =   6;///< 邮件状态
+    required string title         =   7;///< 邮件标题
+    optional string fromUserName  =   8;///< 发送者的名字
+    optional string destUserName  =   9;///< 接收者的名字 
+    optional bool   haveAttachment=  10;///< 是否有附件
+};
+
+/// @brief 邮件列表
+message MailTitleList
+{
+    repeated MailTitle mail =   1;  
+};
+
+message AllItemData
+{
+    repeated bytes itemData       =   4;///< 发送道具protocol::item::ItemSerialize
+};
+
+/// @brief 邮件内容
+message MailDetail
+{
+    required uint32 mailID          =   1;///< 邮件ID
+    required string mainText        =   2;///< 邮件正文
+    optional uint32 money           =   3;///< 发送金钱
+    required bytes  allItemData     =   4;///< 发送道具AllItemData
+    optional uint32 moneyType       =   5;///< 金钱类型
+};
+
+message MailItem
+{
+    required uint32 itemBaseID      =   1;  
+    required uint32 num             =   2;  
+    required bool   needBind        =   3;  
+    required uint32 quality         =   4;  
+    required uint32 identify        =   5;  
+};
+
+message MoneyData
+{
+    required uint32 money           =   1;  
+    required uint32 moneyType       =   2;  
+}
+
+message MoneyDataBinary
+{
+    repeated MoneyData moneyData          = 1;
+}
+
+message MoneyAndItemData
+{
+    optional bytes  moneyDataBinary         =   1;  // MoneyDataBinary 
+    optional bytes  itemData                =   2;  
+};
+
+message CreateMailData
+{
+    required uint32 mailType                =   1;  
+    optional uint32 fromID                  =   2;  
+    optional string title                   =   3;  
+    optional string mainText                =   4;  
+    optional bytes  moneyDataBinary         =   5;  // MoneyDataBinary 
+    optional bytes  itemData                =   6;  
+    repeated MailItem   itemList            =   7;  
+};
+
+enum eSendMailGroupType{
+    eSendMailGroupType_None          =   0;  
+    eSendMailGroupType_UserList      =   0;  
+    eSendMailGroupType_AllUser       =   1;  
+    eSendMailGroupType_OnlineUser    =   2;  
+    eSendMailGroupType_Max           =   3;  
+};
+
+message SendSysMailData
+{
+    optional eSendMailGroupType groupType   =   1;  
+    repeated uint32 destUserIDList          =   2;  
+    repeated string destUserNameList        =   3;
+    optional uint32 srcPlatformType         =   4;
+    optional uint32 srcConnID               =   5;
+    required CreateMailData createMailData  =   6;
+};

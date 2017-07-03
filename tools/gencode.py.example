@@ -1,0 +1,89 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from random import choice
+import sys,commands,re,md5
+
+#表名 前缀 后缀长度 生成个数 默认密码
+accountConfig = ["ACCOUNT", "test_", 8, 10, "123456"]
+#表名 激活码类型 前缀 后缀长度 生成个数
+keyConfig = ["ACTIVATE_CODE", "1", "UNIONPRESS", 16, 10]
+
+#随机字符集
+codeRangeStr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+#数据库连接
+#database = ["10.1.101.6", "root", "123456", "platform"]
+database = ["115.238.129.107", "ddtgame", "ddtgame@gamewave.com", "platform"]
+connectionStr = 'mysql -u ' + database[1] + ' -p' + database[2] +' -h ' + database[0] + ' -e ' + '\"' + 'set character_set_client=utf8; SET character_set_connection=UTF8; use ' + database[3] + ';'
+
+help = '''
+gencode.py account 生成账号
+gencode.py key     生成激活码
+'''
+def dropMark(str):
+	str = re.sub("--.*\n","",str)
+	return str
+#------------------------------------------------------------------------------
+def doCmd(str):
+	str = dropMark(str)
+	str = str.replace("`","\`")
+	cmd = connectionStr + str + '\"'
+	print cmd 
+	print "\n"
+	status,output = commands.getstatusoutput(cmd)
+	if status != 0:
+		print "执行SQL错误!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+		print status
+		print output
+		sys.exit(0)
+#------------------------------------------------------------------------------
+def generateAccount():
+	datafile = open('gen_account.txt', 'w');
+	defaultPasswordMD5 = md5.new(accountConfig[4]).hexdigest()
+	for i in range(1, accountConfig[3] + 1):
+		failTimes = 0
+		while True:
+			accountName = accountConfig[1]
+			for j in range(1, accountConfig[2] + 1):
+				accountName += choice(codeRangeStr)
+			cmd = connectionStr + "select count(*) from " + accountConfig[0] + " where ACCOUNT_NAME = '" + accountName + "';" + '\" | sed -n \'2p\''
+			count = commands.getoutput(cmd)
+			if count == '0':
+				cmd = "insert into " + accountConfig[0] + " values('" + accountName + "', '" + defaultPasswordMD5 + "');"
+				datafile.write(accountName + '\t' + accountConfig[4] + '\r\n')
+				doCmd(cmd)
+				break
+			failTimes = failTimes + 1
+			if failTimes > 100:
+				print "生成下个账号已连续失败100次，考虑增加账号长度"
+				sys.exit(0)
+#------------------------------------------------------------------------------
+def generateKey():
+	datafile = open('gen_key.txt', 'w');
+	for i in range(1, keyConfig[4] + 1):
+		failTimes = 0
+		while True:
+			key = keyConfig[2]
+			for j in range(1, keyConfig[3] + 1):
+				key += choice(codeRangeStr)
+			cmd = connectionStr + "select count(*) from " + keyConfig[0] + " where CODE = '" + key + "';" + '\" | sed -n \'2p\''
+			count = commands.getoutput(cmd)
+			print count
+			if count == '0':
+				cmd = "insert into " + keyConfig[0] + " values('" + key + "', " + keyConfig[1] + ", NULL, 0);"
+				datafile.write(key + '\r\n')
+				doCmd(cmd)
+				break
+			failTimes = failTimes + 1
+			if failTimes > 100:
+				print "生成下个激活码已连续失败100次，考虑增加激活码长度"
+				sys.exit(0)
+#------------------------------------------------------------------------------
+if __name__ == "__main__":
+	if len(sys.argv) != 2:
+		print help 
+	elif sys.argv[1] == "account":
+		generateAccount()
+	elif sys.argv[1] == "key":
+		generateKey()

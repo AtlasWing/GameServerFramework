@@ -1,0 +1,25 @@
+
+#include "IPCredit.jce"
+module newIPPro
+{
+
+	
+	//首次拉取数据，优先级高
+	interface FIPCredit
+	{
+		/*
+		 * @首次客户端全量下载请求
+		 * @param(input) : chunkLen  :  每次下载的个数
+		 * @param(output): vIPAttr   :  返回IP数据信息
+		 */
+		void FirstTotalDownloadIPInfo(unsigned int StartPos,unsigned int StartPos1,unsigned int chunkLen,out newIPPro::downloadInfo loadInfo);
+
+		/*
+		 * @首次全量拉取district code
+		 * @param(output): vCodeInfo :  返回code对应表信息;
+		 */
+		void FirstTotalDownloadCode(out vector<CodeInfo> vCodeInfo);
+	
+	};
+
+}; 

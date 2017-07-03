@@ -1,0 +1,71 @@
+#!/bin/sh
+
+#启动服务器脚本
+#停止服务器 ./Run.sh stop
+#重启服务器 ./Run.sh restart
+
+ulimit -c unlimited
+LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+
+LOCAL_SERVER_LIST=`grep Server config/ZoneConfig.xml | grep "type=" | grep "name=" | awk -F'"' '{print $6}'`
+
+dozone()
+{
+    cd ./sql
+    ./dbtool.py update
+    cd ..
+    for server in $LOCAL_SERVER_LIST
+    do
+        if [ $server = "gatewayServer" ]
+        then
+            sleep 2 
+        else
+            sleep 2 
+        fi
+        echo "./$server/$server -d"
+        ./$server/$server -d
+    done
+}
+
+stopzone()
+{
+    RUNNINGSERVERCOUNT=`ps x|grep "Server"| grep " -d" | sed -e '/make/d' -e '/CMakeFiles/d' -e '/grep/d' | wc -l`
+    if [ $RUNNINGSERVERCOUNT -ne 0 ]
+    then
+        COUNTDOWNTIME=3
+        while [ $COUNTDOWNTIME -ne 0 ]
+        do
+            echo "server will close after $COUNTDOWNTIME seconds..."
+            COUNTDOWNTIME=$[COUNTDOWNTIME-1]
+            sleep 1
+        done
+    else
+        #未运行
+        return
+    fi
+    pkill zoneServer -u `whoami`
+    echo "stop zoneServer"
+}
+
+echo "--------------------------------------------------"
+echo "--------------------START-------------------------"
+echo "--------------------------------------------------"
+case $1 in
+    stop)
+    stopzone
+    ;;
+    restart)
+    stopzone
+    sleep 10 
+    dozone
+    ;;
+    *)
+    stopzone
+    sleep 5 
+    dozone
+    ;;
+esac
+echo "--------------------------------------------------"
+echo "--------------------DONE--------------------------"
+echo "--------------------------------------------------"

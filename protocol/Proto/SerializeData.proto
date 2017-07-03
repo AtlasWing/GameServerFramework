@@ -1,0 +1,22 @@
+package protocol.serialize;
+// 远征的每个关卡的排行榜
+message MonsterChallengeSequenceData
+{
+	required uint32 mode		=	1;
+	required uint32 scoreSum	=	2;
+	repeated uint32 userList	=	3;
+};
+
+// 远征关卡的排行榜数据
+message MonsterChallengeSequenceAllBinary
+{
+	repeated MonsterChallengeSequenceData sequenceDataList	=	1;
+};
+
+// 排位赛存档数据
+message RankMatchBinary
+{
+	optional uint32 seasonID		=	1;
+	optional uint32 startTimeInSec	=	2;
+	optional uint32 endTimeInSec	=	3;
+};

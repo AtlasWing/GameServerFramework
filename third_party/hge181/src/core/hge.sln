@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual C++ Express 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hge", "hge.vcproj", "{FB1A9503-D67D-4311-AB3B-113DAD7D6F9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB1A9503-D67D-4311-AB3B-113DAD7D6F9F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FB1A9503-D67D-4311-AB3B-113DAD7D6F9F}.Debug|Win32.Build.0 = Debug|Win32
+		{FB1A9503-D67D-4311-AB3B-113DAD7D6F9F}.Release|Win32.ActiveCfg = Release|Win32
+		{FB1A9503-D67D-4311-AB3B-113DAD7D6F9F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

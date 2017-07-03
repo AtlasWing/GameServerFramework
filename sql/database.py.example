@@ -1,0 +1,22 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import os,re,sys,commands
+
+##########################配置部分开始######################
+#区编号
+zoneNum="{zoneNum}"
+#区名
+zoneName="{zoneName}"
+#区服务器管理器IP
+zoneServerIP="{internalIP}"
+#区服务器管理器端口
+zoneServerPort="{zoneServerPort}"
+#数据库配置 数据库IP,数据库用户名,数据库密码,数据库名,数据库安装文件,数据库更新文件,数据库版本文件,数据库类型
+#区游戏数据库
+zoneGameDB = ["{zoneGameDBServerIP}", "{zoneGameDBServerUserName}", "{zoneGameDBServerUserPassword}", "zoneGame_{zoneNum}", "installGame.sql", "updateGame.sql", "versionGame.sql", "1"]
+#AdminServer对应数据库
+adminDB = ["{adminDBServerIP}", "{adminDBServerUserName}", "{adminDBServerUserPassword}", "admin", "installAdmin.sql", "updateAdmin.sql", "versionAdmin.sql", "3"]
+#重置数据库时忽略的表集合
+ingore = ["DATABASE_VERSION", "LOG_RESET_DATA"]
+##########################配置部分结束######################

@@ -1,0 +1,55 @@
+import "protocol/Proto/UserData.proto";
+
+package protocol.club;
+
+message CreateClubData{
+	required uint32 ownerID	=	1;
+	optional uint32 id		=	2;
+	required uint32 clubFlag=	3;
+	required string name	=	4;
+	required string contact	=	5;
+	required string notice	=	6;
+	optional uint32 level	=	7;
+	optional uint32 currExp	=	8;
+	optional uint32 totalExp=	9;
+	optional uint32 asset	=	10;
+	optional bytes binaryData=	11;
+	optional uint32 createTimeInSec=12;
+	optional bool	isOpen	=	13 [default = true];
+};
+
+message AllClubData
+{
+	repeated CreateClubData clubDataList =	1;
+};
+
+message ClubLogBinary
+{
+    optional uint32 logType             = 1;
+    optional uint32 logTime             = 2;
+    optional string clubLog             = 3;
+};
+message ClubBinary
+{
+	optional uint32 activeDegreeWeek	=	1;
+	optional uint32 saveTimeInSec		=	2;
+	optional uint32 lastChangeNameTimeInSec	=	3;
+    optional uint32 activeDegreeDay     =    4;
+    repeated ClubLogBinary clubLogBinary = 5;
+};
+
+message ClubSaveData
+{
+	required uint32 id		=	1;
+	optional uint32 ownerID		=	2;
+	optional uint32 level		=	3;
+	optional uint32 currExp		=	4;
+	optional uint32 totalExp	=	5;
+	optional string contact		=	6;
+	optional string notice		=	7;
+	optional bytes  binaryData	=	8;
+	optional uint32 asset		=	9;
+    optional uint32 open        =   10;
+    optional string name        =   11;
+};
+

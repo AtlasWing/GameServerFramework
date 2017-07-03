@@ -1,0 +1,642 @@
+import "protocol/Proto/ItemData.proto";
+package protocol.user;
+
+message MainPackageBinary
+{
+    required uint32 packageID      =   1;
+    required uint32 capacity       =   2;
+}
+
+message EquipPackageBinary
+{
+    repeated protocol.item.ItemBinary items         = 1;
+}
+
+message TimeEndEffectData
+{
+    required uint32 effectType		=   1;		//效果子类型
+    required uint32 endTimeInSec    =   2;		//失效时间戳
+	optional uint32 param			=	3;		//额外参数
+}
+
+message UseTimesEffectData
+{
+    required uint32 effectType		=   1;		//效果子类型  
+    required uint32 useTimes        =   2;		//剩余使用次数
+	optional uint32 param			=	3;		//额外参数
+}
+
+message MiscUserDataBinary
+{
+    repeated uint32 loginDayVec             =   1;
+    repeated TimeEndEffectData timeEndEffectData  = 3;
+    repeated UseTimesEffectData useTimesEffectData= 4;
+}
+
+message LoginSerializeBinary
+{
+    optional bytes     packageBinary   =   1;  // AllPackageBinary
+    optional bytes     miscBinary      =   2;
+    optional bytes     userDataBinary  =   3;  // UserDataBinary
+    optional uint32    rechargeMoney   =   4;
+    optional bytes     petDataBinary   =   5;  // message PetDataSerializeBinary
+    optional bytes     itemColdBinary  =   6;
+    optional bytes     useSkillBinary  =   7;  // UseSkillBinary
+    optional bytes     haveSkillBinary =   8;  // HaveSkillBinary
+    optional bytes     havePassiveBinary    = 9;  // PassiveSkill 
+    optional bytes     duplBinary      =   10; // DuplBinary 
+    optional bytes     equipPosBinary  =   11; // EquipPosBinary
+    optional bytes     trumpBinary     =   12; // TrumpBinary 
+    optional bytes     rewardBinary    =   13; // UserRewardBinary 
+    optional bytes     discoveryBinary =   14; // DiscoveryBinary 
+	optional bytes	   friendDataBinary=   15; // 好友相关数据 FriendDataBinary 
+	optional bytes	   duplDropBinary  =   16; // DuplDropBinary 
+	optional bytes	   mysteryShopBinary=  17; // proto::item::MysteryShopBinary  
+    optional bytes     taskBinary       =  18; // 任务相关  TaskBinary
+    optional bytes     matchDataBinary  =  19; // MatchDataBinary
+    optional bytes     wingBinary       =  20; // 翅膀相关  WingBinary
+    optional bytes     vipDataBinary    =  21; // vip  VipDataBinary
+};
+
+message PetDataSerializeBinary
+{
+    repeated PetData   petData         =   1;  // message PetData
+    required uint32    totalFightPower =   2;
+}
+
+message UserSaveData
+{
+    optional bytes      packageBinary       =   1; // AllPackageBinary
+    optional bytes      miscBinary          =   2;
+    optional bytes      userDataBinary      =   3;
+    optional uint32     rechargeMoney       =   4;
+	optional uint32		curExp				=	5; // 当前经验
+	optional uint32		level				=	7; // 等级
+	optional uint32		bitMask				=	8; // bitMask
+	optional uint32		vitality			=	9; // vitality 体力值
+	optional uint32		skillPoint			=	10; // skillPoint 技能点
+	optional bytes		itemColdBinary      =	11; // 道具冷却数据 
+	optional uint32		silver              =	12; // 银两
+	optional uint32		diamond             =	13; // 钻石
+	optional uint32		bindDiamond         =	14; // 绑钻
+    optional bytes      useSkillBinary      =   15;  // UseSkillBinary
+    optional bytes      haveSkillBinary     =   16;  // HaveSkillBinary
+    optional bytes      havePassiveBinary   =   17;
+    optional bytes      unlockPetData       =   18; // PetDataSerializeBinary
+    optional bytes      duplBinary          =   19; // DuplBinary 
+    optional bytes      equipPosBinary      =   20; // EquipPosBinary
+	optional uint32		gmLevel             =	21; // GM等级 
+    optional bytes      trumpBinary         =   22; // TrumpBinary 
+    optional bytes      rewardBinary        =   23; // UserRewardBinary 
+    optional bytes      discoveryBinary     =   24; // DiscoveryBinary 
+	optional uint32		monthCardStopTime   =	25; // 月卡到期时间 
+	optional bytes		friendDataBinary    =	26; // 好友相关数据 FriendDataBinary 
+	optional bytes	    mysteryShopBinary   =   27; // proto::item::MysteryShopBinary  
+    optional bytes      taskBinary          =   28; // 任务相关  TaskBinary
+	optional uint32		thoughtValue		=	29; // 念力值
+	optional uint32		fightPower		    =	30; // 战斗力 
+    optional bytes      matchDataBinary     =   31; // MatchDataBinary
+    optional bytes      wingBinary          =   32; // 翅膀相关  WingBinary
+	optional uint32		honorPoints         =	43; // 荣誉值 
+    optional uint32     vipExp              =   44; 
+    optional uint32     vipLevel            =   45;
+    optional bytes      vipDataBinary       =   46; // vip  VipDataBinary
+    optional uint32     clubPoints          =   47; 
+}
+
+message LogoutCallbackData
+{
+    optional uint32 destZoneID  =   1;  // 目的区ID
+};
+
+message ChangeLogicExtendData
+{
+	optional bytes userLoginData		=	1;
+	optional bytes intoRoomExtendData	=	2;
+    optional bool  isAudience           =   3;
+    optional uint32 campType            =   4;
+};
+
+message MessageSaveData
+{
+    repeated MessageData messageData = 1;
+};
+
+message MessageData
+{
+    required uint32 messageID         =   1;
+    optional string info              =   2;
+};
+
+message PetData     // petData 
+{
+    required uint32 petID           =   1;
+    required uint32 petExp          =   2;
+    required uint32 petStarLevel    =   3;
+    required uint32 petQuality      =   4;
+    repeated SkillData petSkillData =   5;
+    repeated PetEquipBinary petEquipBinary =   6;
+    required uint32 teamPos         =   7;
+    required PropData propData      =   8;
+    required uint32 petLevel        =   9;
+    required uint32 seq             =   10;
+};
+
+message PropData
+{
+    required uint32 maxHP           =   1;
+    required uint32 maxMP           =   2;
+    required uint32 physicalAttack  =   3;
+    required uint32 magicAttack     =   4;
+    required uint32 pureDamage      =   5;
+    required uint32 physicalDefence =   6;
+    required uint32 magicDefence    =   7;
+    required uint32 crit            =   8;
+    required uint32 critDefence     =   9;
+    required uint32 critValue       =   10;
+    required uint32 appendCrit      =   11;
+    required uint32 extraCrit       =   12;
+    required uint32 extraCritDefence=   13;
+    required uint32 hitValue        =   14;
+    required uint32 avoidValue      =   15;
+    required uint32 extraHitValue   =   16;
+    required uint32 extraAvoidValue =   17;
+    required uint32 moveSpeed       =   18;
+    required uint32 hpRecoverySpeed =   19;
+    required uint32 mpRecoverySpeed =   20;
+};
+
+message PetEquipBinary
+{
+    required uint32 pos         = 1;
+    required uint32 itemBaseID  = 2;
+};
+
+message AllItemData
+{
+    repeated bytes itemData =   1;
+};
+
+message ItemColdData
+{
+    required uint32 coldType        = 1;
+    required uint32 endTimeInSec    = 2;
+};
+
+message ItemColdBinary
+{
+    repeated ItemColdData itemColdData  = 1;
+};
+
+message AllPackageBinary
+{
+    repeated protocol.item.ItemBinary items         = 1;
+    optional MainPackageBinary mainPackageBinary    = 2;
+    optional EquipPackageBinary equipPackageBinary  = 3;
+};
+
+message SkillBuildData
+{
+    optional uint32 weaponeID       = 1;
+    repeated BuildBaseData buildBaseData = 2;
+};
+
+message BuildBaseData
+{
+    optional uint32 buildID         = 1;
+    optional string buildName       = 2;
+    repeated UseSkillData useSkillData = 3;
+};
+
+message UseBuildData
+{
+    optional uint32 weaponeID   = 1;
+    optional uint32 buildID     = 2;
+};
+
+message UseSkillData
+{
+    optional uint32 skillID     = 1;
+    optional uint32 selectIndex = 2;
+};
+
+message UseSkillBinary
+{
+    repeated UseSkillData useSkillData = 1;
+    repeated SkillBuildData skillBuilddata  = 2;
+    repeated UseBuildData useBuildData    = 3;
+};
+
+message HaveSkillBinary
+{
+    repeated SkillData skillData    = 1;
+    repeated UserUnlockWeaponData userUnlockWeaponData = 2;
+};
+
+message SkillData
+{
+    required uint32 skillID     = 1;
+    required uint32 skillLevel  = 2;
+};
+
+message UserUnlockWeaponData
+{
+    required uint32 weaponID    = 1;
+    required uint32 unlockState = 2;
+};
+
+message UnlockPassiveSkillBarBinary
+{
+    repeated uint32 index       = 1;
+};
+
+message DuplBinary
+{
+    repeated DuplData dupldata  = 1;
+    repeated RealmData realmData = 2;
+    required uint32 ExpDuplRemainTimes = 3;
+    required uint32 MoneyDuplRemainTimes = 4;
+    required GamblingDataBinary gamblingDataBinary =5;
+    required uint32 ItemDuplRemainTimes = 6;
+    optional uint32 buyBackTimes = 7;
+};
+
+message DuplData
+{
+    required uint32 duplID      = 1;
+    required uint32 duplStar    = 2;
+    required uint32 remainTimes = 3;
+    required uint32 havePlayStory = 4;
+    required uint32 resetRemainTimes = 5;
+};
+
+message RealmData 
+{
+    optional uint32 realmID         = 1;
+    optional uint32 difficultyLevel = 2;
+    repeated uint32 boxID           = 3;
+};
+
+message GamblingDataBinary
+{
+    optional uint32 gamblingDuplID = 1;
+    optional uint32 gamblingDuplRemainTimes = 2;
+    optional bool canAward = 3;
+    repeated GamblingDropItem gamblingDropItem = 4; 
+    optional uint32 willExp = 5;
+    optional uint32 willMoney = 6;
+    repeated GamblingWillDropItem gamblingWillDropItem = 7;
+    optional uint32 bossID = 8;
+    optional uint32 isReward = 9;
+};
+
+message GamblingDropItem
+{
+    optional uint32 itemBaseID = 1;
+    optional uint32 num = 2;
+    optional uint32 quality = 3;
+    optional uint32 identify = 4;
+    optional uint32 needBind = 5;
+};
+message GamblingWillDropItem
+{
+    optional uint32 itemBaseID = 1;
+    optional uint32 num = 2;
+    optional uint32 quality = 3;
+    optional uint32 identify = 4;
+    optional uint32 needBind = 5;
+};
+
+message StoneData
+{
+    required uint32 stoneID     = 1;
+    required uint32 stoneLevel  = 2;
+};
+
+message EquipPosData
+{
+    required uint32 equipPos        = 1;
+    required uint32 intensifyLevel  = 2;
+    repeated StoneData stoneData    = 3;
+};
+
+message EquipPosBinary 
+{
+    repeated EquipPosData equipPosData = 1;
+};
+
+message TrumpBinary 
+{
+    repeated TrumpData trumpData    = 1;
+    required uint32 useTrumpID      = 2;
+    required uint32 useTrumpLevel   = 3;
+};
+
+message TrumpData 
+{
+    required uint32 trumpID     = 1;
+    required uint32 level       = 2;
+    repeated TrumpSkillData skillData   = 3;
+    required uint32 blessingValue  = 4;
+};
+
+message TrumpSkillData 
+{
+    required uint32 skillID     = 1;
+    required uint32 skillLevel  = 2;
+};
+
+message UserRewardBinary
+{
+    required uint32 saveDayStartInSec                       = 1;
+    optional LoginSignRewardBinary loginSignRewardBinary    = 2;
+    required SummonRaffleBinary summonRaffleBinary          = 3;
+    required MoneyDrawingBinary moneyDrawingBinary          = 4;
+    required BuyVitalityBinary BuyVitalityBinary            = 5;
+    repeated RechargeDataBinary RechargeDataBinary          = 6;  //充值数据
+    optional SignBinary signBinary                          = 7;  //签到数据
+    repeated uint32 vipBoxID                                = 8;  //vip宝箱数据
+};
+
+message LoginSignRewardBinary
+{
+    required uint32  lastSignDayStartInSec  = 1;  
+    required uint32  continueSignDayNum     = 2;  
+    optional bool    isHaveWeekReward       = 3;  
+    required uint32  loginDayNum            = 4;  
+};
+
+message SummonRaffleBinary
+{
+    required bool   isHadRaffleNormalFirst      = 1;  
+    required bool   isHadRaffleEquipFirst       = 2;
+    required uint64 lastRaffleNormalTime        = 3;  //上次领普通抽奖时间
+    required uint32 normalFreeRemainTimes       = 4;  //免费普通抽奖还剩几次
+    required uint64 equipLastFreeRaffleTime     = 5;  //上次免费装备抽奖时间
+};
+
+message MoneyDrawingBinary
+{
+    required uint32 moneyDrawingTime                   = 1; //今日招财次数
+    required uint32 maxMoneyDrawingTime                = 2; //每日招财最大次数
+    required uint32 totalMoneyDrawingTime              = 3; //总次数
+    repeated uint32 moneyDrawingboxID                  = 4; //招财进宝宝箱
+};
+
+message BuyVitalityBinary
+{
+    required uint32 buyVitalityTimes                   = 1; //今日购买体力次数
+    required uint32 maxBuyVitalityTimes                = 2; //每日购买体力最大次数
+};
+
+message RechargeDataBinary
+{
+    optional uint32 rechargeID                  = 1; // 充值id
+    optional uint32 rechargeNum                 = 2; // 充值次数
+};
+
+message SignBinary
+{
+    optional uint32 signTimes                          = 1;  //签到次数
+    optional uint32 signState                          = 2;  //签到状态
+};
+
+message FunctionUnlockFlag
+{
+    required uint32 type    = 1;    // eFunctionType
+    required uint32 id      = 2;
+};
+
+message FunctionUnlockData
+{
+    repeated FunctionUnlockFlag functionVec = 1;
+};
+
+message UserDataBinary
+{
+    optional bytes isUnlockFunctionVec      = 1;  // 是否解锁了某些功能 FunctionUnlockData
+    repeated uint32 loginDayVec             = 2;
+    required uint32 completedGuideStage     = 3;  // 完成引导的步骤
+    optional bool  hasPassNewCharGuide      = 4;  // 是否通过新手引导 
+};
+
+// 星海探秘数据
+message DiscoveryBinary 
+{
+    required uint32 nowSceneID          = 1;
+    required uint32 posX                = 2;
+    required uint32 posY                = 3;
+    required uint32 thoughtLevel        = 4;
+    required uint32 thoughtExp          = 5;
+    repeated DiscoveryData discoveryData= 7;
+    repeated GridData gridData          = 8;
+    required uint32 monsterLevel        = 9;
+    repeated OfflineRewardData offlineRewardData      = 10; // 离线托管奖励
+};
+
+message OfflineRewardData
+{
+    required uint32 index                   = 1; // 第几个托管位置
+    required uint32 sceneID                 = 2; // 托管的难度
+    required uint32 needTimeInSec           = 3; // 托管需要的时间
+    required uint32 startTimeInSec          = 4; // 开始托管的时间
+    required uint32 isUnlock                = 5; // 是否解锁了
+};
+
+message DiscoveryData
+{
+    required uint32 sceneID     = 1;
+    required uint32 times       = 2;
+};
+
+// 星海探秘格子数据
+message GridData
+{
+    required uint32 objID       = 1;
+    required uint32 num         = 2;
+    required uint32 isBind      = 3;
+    required uint32 timeInSec   = 4;
+    required uint32 type        = 5;
+    required uint32 index       = 6;
+    required bool   isOpen      = 7;
+    required bool openTimeInSec = 8;
+    required uint32 addSpeedNeedItemNum = 9;
+};
+
+message UserRelationSaveData
+{
+    optional uint32 charID      = 1;
+    optional bytes clubData     = 2;
+    optional bytes message      = 3;
+};
+
+message WaitJoinClubData
+{
+    required uint32 clubID              =   1;
+    required uint32 requestTimeInSec    =   2;
+};
+
+message ClubSaveData
+{
+    optional uint32 clubID                  =   1;  
+    optional uint32 lastLeaveClubTimeInSec  =   2;  
+    optional uint32 clubContributionLevel   =   3;  
+    optional uint32 clubContributionValue   =   4;  
+    repeated WaitJoinClubData waitJoinClubList= 5;
+    optional uint32 saveTimeInSec           =   6;  
+    optional uint32 clubTitle               =   7;  
+};
+
+message VipTypeData
+{
+    required uint32 vipType             =   1;
+    required uint32 endTimeInSec        =   2;
+}
+
+// 离线开启VIP的数据
+message OfflineOpenVipData
+{
+    required string requestUserName     =   1;
+    required uint32 openTimeInSec       =   2;
+    required uint32 effectTimeInDay     =   3;
+};
+
+message VipBinary
+{
+    optional uint32 vipLevel                                =   1;  // VIP等级
+    optional uint32 vipGrowValue                            =   2;  //vip成长值
+    repeated OfflineOpenVipData offlineOpenVipDataList      =   3;
+    optional uint32 vipEndTimeInSec                         =   4;
+    repeated VipTypeData    vipTypeDataList                 =   5;  //vip类型数据
+    optional uint32 lastCheckOverdueTimeInSec               =   6;  // 上次检查过期提示的时间
+    optional uint32 vipType                                 =   7;  // VIP类型
+};
+
+message WarDataBinary
+{
+    optional uint32 winTimes                                =   1;  // 胜利次数
+    optional uint32 loseTimes                               =   2;  // 失败次数
+    optional uint32 pvpTimes                                =   3;  // pvp次数
+    optional uint32 saveTimeInSec                           =   4;  // 存档时间
+    optional uint32 weekWinTimes                            =   5;  // 周胜利次数
+    optional uint32 weekLoseTimes                           =   6;  // 周失败次数
+    optional uint32 weekPvpTimes                            =   7;  // 周pvp次数
+    optional uint32 weekKillNum                             =   8;  // 周击杀数
+    optional uint32 weekKilledNum                           =   9;  // 周死亡数
+    optional uint32 killNum                                 =   10; // 总击杀数
+    optional uint32 killedNum                               =   11; // 总死亡数
+};
+
+message FriendDataBinary
+{
+    repeated uint32 addMeUserIDList         = 1;    // 添加我为好友的玩家
+    required uint32 todayGetVitalityTimes   = 2;    // 今天领取体力的次数
+    required uint32 lastGetVitalityTimeInSec= 3;    // 最后一次领取体力的时间
+};
+
+message DuplDropBinary
+{
+    required uint32 duplID              = 1;
+    required uint32 dropExp             = 2;
+    required uint32 dropMoney           = 3;
+    repeated DropItemData itemData      = 4;
+    repeated DropEquipData equipData    = 5;
+    repeated DropPetData petData        = 6;
+};
+
+message DropItemData
+{
+    required uint32 itemBaseID          = 1;
+    required uint32 bindType            = 2;
+    required uint32 num                 = 3;
+};
+
+message DropEquipData
+{
+    required uint32 equipBaseID         = 1;
+    required uint32 bindType            = 2;
+    required uint32 num                 = 3;
+    required uint32 quality             = 4;
+    required uint32 identify            = 5;
+};
+
+message DropPetData 
+{
+    required uint32 petID           = 1;
+    required uint32 petExp          = 2;
+    required uint32 petUpLevel      = 3;
+};
+
+message TaskBinary
+{
+    repeated MainTaskData mainTaskData              = 1;
+    repeated EquipTaskData equipTaskData            = 2;
+    repeated PetTaskData petTaskData                = 3;
+    repeated TrumpTaskData trumpTaskData            = 4;
+    repeated IntensifyTaskData intensifyTaskData    = 5;
+}
+
+message MainTaskData
+{
+    required uint32 taskID              = 1;
+    required uint32 taskFinishNum       = 2;
+    required uint32 isFinish            = 3;
+    required uint32 isReward            = 4;
+}
+
+message EquipTaskData
+{
+    optional uint32 equipPos            = 1;
+    optional uint32 equipQuality        = 2; 
+}
+
+
+message PetTaskData
+{
+    optional uint32 petID            = 1;
+    optional uint32 petStar          = 2; 
+    optional uint32 petQuality       = 3; 
+}
+
+message TrumpTaskData
+{
+    optional uint32 trumpID             = 1;
+    optional uint32 trumpLevel          = 2; 
+}
+
+message IntensifyTaskData
+{
+    optional uint32 intensifyPos        = 1;
+    optional uint32 intensifyLevel      = 2; 
+}
+
+message WingBinary
+{
+    optional uint32 wingLevel       = 1;
+    optional uint32 wingState       = 2;
+    optional uint32 useWingID       = 3;
+    optional uint32 blessingValue   = 4;
+    optional uint32 upStarItemID    = 5;
+    optional uint32 attack          = 6;
+    optional uint32 defence         = 7;
+    optional uint32 maxBlood        = 8;
+    optional uint32 hitValue        = 9;
+    optional uint32 avoidValue      = 10;
+    optional uint32 critValue       = 11;
+    optional uint32 critDefenceValue= 12;
+}
+
+message VipDataBinary
+{
+}
+
+message MatchDataBinary 
+{
+    optional uint32 saveTimeInSec           = 1;    // 存档时间
+    optional uint32 commonEloValue          = 2;    // 常规elo值
+    optional uint32 commonEloGroup          = 3;    // 战力分组
+    optional uint32 commonMatchWinTimes     = 4;    // 常规赛胜利次数
+    optional uint32 commonMatchLoseTimes    = 5;    // 常规赛失败次数
+    optional uint32 commonMatchRunOffTimes  = 6;    // 常规赛逃跑次数
+}
+

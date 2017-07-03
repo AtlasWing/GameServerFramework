@@ -1,0 +1,67 @@
+# Project: hgehelp
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = gccRelease/hgedistort.o gccRelease/hgefont.o gccRelease/hgegui.o gccRelease/hgeguictrls.o gccRelease/hgeparticle.o gccRelease/hgepmanager.o gccRelease/hgerect.o gccRelease/hgeresource.o gccRelease/hgesprite.o gccRelease/hgevector.o gccRelease/parser.o gccRelease/resources.o gccRelease/hgeanim.o $(RES)
+LINKOBJ  = gccRelease/hgedistort.o gccRelease/hgefont.o gccRelease/hgegui.o gccRelease/hgeguictrls.o gccRelease/hgeparticle.o gccRelease/hgepmanager.o gccRelease/hgerect.o gccRelease/hgeresource.o gccRelease/hgesprite.o gccRelease/hgevector.o gccRelease/parser.o gccRelease/resources.o gccRelease/hgeanim.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"   
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = gccRelease/libhgehelp.a
+CXXFLAGS = $(CXXINCS)   -fexpensive-optimizations -O3
+CFLAGS = $(INCS)   -fexpensive-optimizations -O3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before gccRelease/libhgehelp.a all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(LINKOBJ)
+	ar r $(BIN) $(LINKOBJ)
+	ranlib $(BIN)
+
+gccRelease/hgedistort.o: hgedistort.cpp
+	$(CPP) -c hgedistort.cpp -o gccRelease/hgedistort.o $(CXXFLAGS)
+
+gccRelease/hgefont.o: hgefont.cpp
+	$(CPP) -c hgefont.cpp -o gccRelease/hgefont.o $(CXXFLAGS)
+
+gccRelease/hgegui.o: hgegui.cpp
+	$(CPP) -c hgegui.cpp -o gccRelease/hgegui.o $(CXXFLAGS)
+
+gccRelease/hgeguictrls.o: hgeguictrls.cpp
+	$(CPP) -c hgeguictrls.cpp -o gccRelease/hgeguictrls.o $(CXXFLAGS)
+
+gccRelease/hgeparticle.o: hgeparticle.cpp
+	$(CPP) -c hgeparticle.cpp -o gccRelease/hgeparticle.o $(CXXFLAGS)
+
+gccRelease/hgepmanager.o: hgepmanager.cpp
+	$(CPP) -c hgepmanager.cpp -o gccRelease/hgepmanager.o $(CXXFLAGS)
+
+gccRelease/hgerect.o: hgerect.cpp
+	$(CPP) -c hgerect.cpp -o gccRelease/hgerect.o $(CXXFLAGS)
+
+gccRelease/hgeresource.o: hgeresource.cpp
+	$(CPP) -c hgeresource.cpp -o gccRelease/hgeresource.o $(CXXFLAGS)
+
+gccRelease/hgesprite.o: hgesprite.cpp
+	$(CPP) -c hgesprite.cpp -o gccRelease/hgesprite.o $(CXXFLAGS)
+
+gccRelease/hgevector.o: hgevector.cpp
+	$(CPP) -c hgevector.cpp -o gccRelease/hgevector.o $(CXXFLAGS)
+
+gccRelease/parser.o: parser.cpp
+	$(CPP) -c parser.cpp -o gccRelease/parser.o $(CXXFLAGS)
+
+gccRelease/resources.o: resources.cpp
+	$(CPP) -c resources.cpp -o gccRelease/resources.o $(CXXFLAGS)
+
+gccRelease/hgeanim.o: hgeanim.cpp
+	$(CPP) -c hgeanim.cpp -o gccRelease/hgeanim.o $(CXXFLAGS)

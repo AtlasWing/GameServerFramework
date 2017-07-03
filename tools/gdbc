@@ -1,0 +1,6 @@
+#!/bin/bash
+#gdb快速调试core文件
+
+CORE_FILE_NAME=$1    
+SYMBOL_FILE_NAME=`file $CORE_FILE_NAME | awk -F"'" '{print $2}'`
+gdb -c $CORE_FILE_NAME --se $SYMBOL_FILE_NAME/$SYMBOL_FILE_NAME

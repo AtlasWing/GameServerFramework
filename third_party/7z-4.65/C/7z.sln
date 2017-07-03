@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LzmaLib", "LzmaLib\LzmaLib.vcproj", "{0E4A4B65-43BE-433F-9778-E8974D084367}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LzmaUtil", "LzmaUtil\LzmaUtil.vcproj", "{FDA5BFE7-1E54-4822-864A-02B23D7638FE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7z", "Archive\7z\7z.vcproj", "{6132DF09-A38F-4199-A4C6-A8680110BF65}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7zlib", "Archive\7z\7zlib.vcproj", "{9288AFDD-7D4C-4558-9326-FAB9A69D8FD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E4A4B65-43BE-433F-9778-E8974D084367}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0E4A4B65-43BE-433F-9778-E8974D084367}.Debug|Win32.Build.0 = Debug|Win32
+		{0E4A4B65-43BE-433F-9778-E8974D084367}.Release|Win32.ActiveCfg = Release|Win32
+		{0E4A4B65-43BE-433F-9778-E8974D084367}.Release|Win32.Build.0 = Release|Win32
+		{FDA5BFE7-1E54-4822-864A-02B23D7638FE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FDA5BFE7-1E54-4822-864A-02B23D7638FE}.Debug|Win32.Build.0 = Debug|Win32
+		{FDA5BFE7-1E54-4822-864A-02B23D7638FE}.Release|Win32.ActiveCfg = Release|Win32
+		{FDA5BFE7-1E54-4822-864A-02B23D7638FE}.Release|Win32.Build.0 = Release|Win32
+		{6132DF09-A38F-4199-A4C6-A8680110BF65}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6132DF09-A38F-4199-A4C6-A8680110BF65}.Debug|Win32.Build.0 = Debug|Win32
+		{6132DF09-A38F-4199-A4C6-A8680110BF65}.Release|Win32.ActiveCfg = Release|Win32
+		{6132DF09-A38F-4199-A4C6-A8680110BF65}.Release|Win32.Build.0 = Release|Win32
+		{9288AFDD-7D4C-4558-9326-FAB9A69D8FD7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9288AFDD-7D4C-4558-9326-FAB9A69D8FD7}.Debug|Win32.Build.0 = Debug|Win32
+		{9288AFDD-7D4C-4558-9326-FAB9A69D8FD7}.Release|Win32.ActiveCfg = Release|Win32
+		{9288AFDD-7D4C-4558-9326-FAB9A69D8FD7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

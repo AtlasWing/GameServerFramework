@@ -1,0 +1,5 @@
+#include "base/nMisc.h"
+
+const DWORD MAX_PROTO_CMD_LEN = 64*1024 - 1;
+const DWORD MAX_BIG_PROTO_CMD_LEN = 868*1024 - 1;
+const DWORD MAX_USER_CMD_LEN =	(MAX_PROTO_CMD_LEN - 128);

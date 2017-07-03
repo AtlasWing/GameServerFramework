@@ -1,0 +1,21 @@
+import sys
+sys.path.append('ThirdParty/protobuf-2.3.0/python/build/lib/')
+sys.path.append('./')
+
+import MySQLdb
+import Protocol.Proto.CharData_pb2
+
+conn = MySQLdb.connect(host="10.1.101.233", port=3306, user="root", passwd="123456", db="zoneGame_1")
+readCursor = conn.cursor(MySQLdb.cursors.DictCursor)
+readSql = "SELECT CHARID, VIP_BINARY FROM CHAR_BASE"
+readCursor.execute(readSql)
+row = readCursor.fetchone()
+vipBinary = Protocol.Proto.CharData_pb2.VipBinary()
+while row != None :
+	if row['VIP_BINARY'] != None :
+		vipBinary.ParseFromString(row['VIP_BINARY'])
+		print(vipBinary)
+		print(vipBinary.vipEndTimeInSec)
+	row = readCursor.fetchone()
+
+conn.close()

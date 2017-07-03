@@ -1,0 +1,162 @@
+
+module newIPPro
+{
+
+	
+	struct IPInfo
+	{
+
+		0 require unsigned int country;		//国家
+		1 require unsigned int province;	//省份
+		2 require unsigned int city;		//城市
+		3 require long district;			//地区
+		4 require unsigned int extend;		//网关信息
+		5 require unsigned int oper;		//运营商
+		6 require unsigned int nettype;		//网络类型
+		7 require unsigned int apn;			//接入点
+		8 require unsigned int flable;		//IP来源	
+		
+	};
+	
+	struct IPAttribute
+	{
+
+		0 require unsigned int startIP;		//起始IP
+		1 require unsigned int endIP;		//起始IP
+		2 require  long place;				//地区编码
+		3 require unsigned int extend;		//网关信息
+		4 require unsigned int oper;		//运营商
+		5 require unsigned int nettype;		//网络类型
+		6 require unsigned int apn;			//接入点
+		7 require unsigned int flable;		//IP来源	
+		
+	};
+	key[IPAttribute, startIP, endIP,place,extend,oper,nettype,apn,flable];
+
+	struct IPProperty
+	{
+		0 require unsigned int timesTamp;
+		1 require unsigned int sequence;
+		2 require unsigned int startIP;		//起始IP
+		3 require unsigned int endIP;		//起始IP
+		4 require long place;				//地区编码
+		5 require unsigned int extend;		//网关信息
+		6 require unsigned int oper;		//运营商
+		7 require unsigned int nettype;		//网络类型
+		8 require unsigned int apn;			//接入点
+		9 require unsigned int flable;		//IP来源	
+		
+	};
+	key[IPProperty, startIP, endIP,place,extend,oper,nettype,apn,flable];
+
+	struct downloadInfo
+	{
+		0 require unsigned int highMaxIndex;			//下载位置的最大下标
+		1 require unsigned int lowMaxIndex;				    //下载位置的最大下标
+		2 require byte isdownloadReset;					//本次下载是否是从头开始下载
+		3 require vector<IPProperty> IPContent;			//下载内容
+		
+	};
+	
+	struct CodeInfo 
+	{
+		
+		0 require int codeType;		//表明是国家/省份/城市/地区...对应表中的哪个
+		1 require long  ID;	    //编号
+		2 require string content;	//具体内容
+	};
+	key[CodeInfo, codeType, ID, content];
+	
+	
+	struct CheckInfo 
+	{
+	
+		0 require byte isNetFlow; 	//1：服务器当前达到流量阀值；0：正常 
+		1 require byte isReset; 	//1：需全量下载,md5值不同； 0：不需全量下载
+		2 optional bool updateConf = false; //是否需要更新配置文件
+	};
+
+	struct ClientConf
+	{
+		0 require bool statisOpen = false; //是否打开统计功能
+		1 require vector<string> simpleLogCitys; //打印染色日志的城市
+		2 require int simplingRate = 0; //上报日志比例，单位万分之一
+		3 require int logBufferLimit = 1000; //客户端最多缓存的日志数
+		4 require bool logUnknownIp = false;//是否记录未知ip
+		5 require int confVersion = 1; //客户端配置版本
+	};
+	
+	struct CheckReq
+	{
+		0 require string contentMd5;
+		1 require unsigned int apiVersion;
+		2 require int confVersion;
+	};
+	
+	enum ReportType 
+	{
+		ECountry,//国家
+		EProvince, //省份
+		ECity, //城市
+		EOperator //运营商	
+	};
+	
+	//统计信息上报
+	struct ReportInfo
+	{
+		0 require ReportType type;
+		1 require string name;
+	};
+	
+    key[ReportInfo, type, name];	
+
+	//非首次拉取，优先级低
+	interface IPCredit
+	{
+
+		/*
+		 * @检查是否需要更新
+		 * @param(input) : contentMd5	:  内容md5值
+		 * @param(output): info :  是否需要更新的信息
+		 */
+		void checkChange(string contentMd5, out CheckInfo info);
+	
+
+		/*
+		 * @检查是否需要更新
+		 * @param(input) : contentMd5	:  内容md5值
+		 * @param(input): apiVersion : 客户端代码版本信息
+		 * @param(output): info :  是否需要更新的信息
+		 */
+		void checkChangeAdv(CheckReq req, out CheckInfo info);
+
+		/*
+		 * @客户端全量下载请求
+		 * @param(input) : chunkLen  : 每次下载的个数
+		 * @param(output): vIPAttr   : 返回IP数据信息;
+		 */
+		void totalDownloadIPInfo(unsigned int StartPos,unsigned int StartPos1,unsigned int chunkLen,out newIPPro::downloadInfo loadInfo);
+
+		/*
+		 * @全量拉取district code
+		 * @param(output): vCodeInfo :  返回code对应表信息;
+		 */
+		void totalDownloadCode(out vector<CodeInfo> vCodeInfo);
+		
+		/**
+		* 获取该客户端ip对应的最新配置
+		*/
+		int getConf(out ClientConf conf);
+		
+		/**
+		* 日志上报
+		*/
+		int reportLogs(vector<string> logContents);
+	
+		/**
+		* 上报统计信息
+		*/
+		int report(map<ReportInfo, long> values);
+	};
+
+}; 

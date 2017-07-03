@@ -1,0 +1,11 @@
+package protocol.serialize;
+
+message UserSequenceData
+{
+    message SequenceValue
+    {   
+        required uint32 charID   =   1;  
+        optional uint32 seqData  =   2;  
+    }   
+    repeated SequenceValue data   =   1;  
+}

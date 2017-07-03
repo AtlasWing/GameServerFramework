@@ -1,0 +1,88 @@
+# Project: hge
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = gccRelease/timer.o gccRelease/graphics.o gccRelease/ini.o gccRelease/input.o gccRelease/random.o gccRelease/resource.o gccRelease/sound.o gccRelease/system.o gccRelease/demo.o gccRelease/crc32.o gccRelease/inffast.o gccRelease/inflate.o gccRelease/inftrees.o gccRelease/ioapi.o gccRelease/trees.o gccRelease/uncompr.o gccRelease/unzip.o gccRelease/zutil.o gccRelease/adler32.o $(RES)
+LINKOBJ  = gccRelease/timer.o gccRelease/graphics.o gccRelease/ini.o gccRelease/input.o gccRelease/random.o gccRelease/resource.o gccRelease/sound.o gccRelease/system.o gccRelease/demo.o gccRelease/crc32.o gccRelease/inffast.o gccRelease/inflate.o gccRelease/inftrees.o gccRelease/ioapi.o gccRelease/trees.o gccRelease/uncompr.o gccRelease/unzip.o gccRelease/zutil.o gccRelease/adler32.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" --no-export-all-symbols --add-stdcall-alias --def hge.def -luser32 -lgdi32 -ladvapi32 -lshell32 -lwinmm -ld3d8 -ld3dx8  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = gccRelease/hge.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1 -D_USRDLL -DHGEDLL   -fexpensive-optimizations -O3
+CFLAGS = $(INCS) -DBUILDING_DLL=1 -D_USRDLL -DHGEDLL   -fexpensive-optimizations -O3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before gccRelease/hge.dll all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=gccRelease/libhge.def
+STATICLIB=gccRelease/libhge.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --driver-name c++ --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+gccRelease/timer.o: timer.cpp
+	$(CPP) -c timer.cpp -o gccRelease/timer.o $(CXXFLAGS)
+
+gccRelease/graphics.o: graphics.cpp
+	$(CPP) -c graphics.cpp -o gccRelease/graphics.o $(CXXFLAGS)
+
+gccRelease/ini.o: ini.cpp
+	$(CPP) -c ini.cpp -o gccRelease/ini.o $(CXXFLAGS)
+
+gccRelease/input.o: input.cpp
+	$(CPP) -c input.cpp -o gccRelease/input.o $(CXXFLAGS)
+
+gccRelease/random.o: random.cpp
+	$(CPP) -c random.cpp -o gccRelease/random.o $(CXXFLAGS)
+
+gccRelease/resource.o: resource.cpp
+	$(CPP) -c resource.cpp -o gccRelease/resource.o $(CXXFLAGS)
+
+gccRelease/sound.o: sound.cpp
+	$(CPP) -c sound.cpp -o gccRelease/sound.o $(CXXFLAGS)
+
+gccRelease/system.o: system.cpp
+	$(CPP) -c system.cpp -o gccRelease/system.o $(CXXFLAGS)
+
+gccRelease/demo.o: demo.cpp
+	$(CPP) -c demo.cpp -o gccRelease/demo.o $(CXXFLAGS)
+
+gccRelease/crc32.o: ZLIB/crc32.c
+	$(CC) -c ZLIB/crc32.c -o gccRelease/crc32.o $(CFLAGS)
+
+gccRelease/inffast.o: ZLIB/inffast.c
+	$(CC) -c ZLIB/inffast.c -o gccRelease/inffast.o $(CFLAGS)
+
+gccRelease/inflate.o: ZLIB/inflate.c
+	$(CC) -c ZLIB/inflate.c -o gccRelease/inflate.o $(CFLAGS)
+
+gccRelease/inftrees.o: ZLIB/inftrees.c
+	$(CC) -c ZLIB/inftrees.c -o gccRelease/inftrees.o $(CFLAGS)
+
+gccRelease/ioapi.o: ZLIB/ioapi.c
+	$(CC) -c ZLIB/ioapi.c -o gccRelease/ioapi.o $(CFLAGS)
+
+gccRelease/trees.o: ZLIB/trees.c
+	$(CC) -c ZLIB/trees.c -o gccRelease/trees.o $(CFLAGS)
+
+gccRelease/uncompr.o: ZLIB/uncompr.c
+	$(CC) -c ZLIB/uncompr.c -o gccRelease/uncompr.o $(CFLAGS)
+
+gccRelease/unzip.o: ZLIB/unzip.c
+	$(CC) -c ZLIB/unzip.c -o gccRelease/unzip.o $(CFLAGS)
+
+gccRelease/zutil.o: ZLIB/zutil.c
+	$(CC) -c ZLIB/zutil.c -o gccRelease/zutil.o $(CFLAGS)
+
+gccRelease/adler32.o: ZLIB/adler32.c
+	$(CC) -c ZLIB/adler32.c -o gccRelease/adler32.o $(CFLAGS)

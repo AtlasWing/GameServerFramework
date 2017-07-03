@@ -1,0 +1,16 @@
+#配置：
+1、 增加新模式的cpp和h文件之后，在./LogicServer/Map/lgMap.cpp中添加地图配置的返回值。
+2、 在LogicServer/Room/lgPKScene.cpp的init中添加新模式。
+3、 在./AIServer/Scene/aiScene.cpp的init中添加新模式。
+4、 在LogicServer/Proto/MapConfig.proto中添加新模式的配置。
+5、 在data/misc中添加新模式的.xml文件。
+6、 在./LogicServer/Config/lgConfigService.cpp中添加该模式。
+7、 在data/map中添加新模式的地图.servermap、地图配置.xml、以及导航网格配置.nav.xml。
+8、 增加LogicServer/LuaPkg/下的相应配置。
+9、 在LogicServer/LuaPkg/lgScript.pkg中添加路径。
+10、脚本中增加相应的scene和user的lua文件。
+11、NetCommand/RoomCommon.h中添加isPKMode的选项。
+
+
+#注意问题：
+"待添加"

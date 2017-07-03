@@ -1,0 +1,4 @@
+void owner->debug @ c_debug(const char* str);
+void owner->error @ c_error(const char* str);
+void owner->info @ c_info(const char* str);
+void owner->fatal @ c_fatal(const char* str);

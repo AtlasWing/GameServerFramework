@@ -1,0 +1,28 @@
+
+
+itc提供的api的返回错误码：
+		SUCCESS		 = 0, /**<没有错误*/
+		CONN_FAILED  = -1, /**<无法连接服务器*/
+		SEND_FAILED	 = -2, /**<发送数据出错*/
+		RECV_FAILED	 = -3, /**<接收数据错误*/
+		RECV_TIMEOUT = -4, /**<接收数据超时*/
+		DP_FORMAT_ERR = -5, /**<数据包格式错误*/
+		SECKEY_ERR	 = -6 /**<密钥错误*/
+
+api里的参数 res结构体里code字段的错误码：
+1000: 参数错误
+1001: 系统繁忙
+1002: 请先登录
+1004: 账户余额不足
+1101: 账户冻结
+1103: 交易回滚或已经确认
+1201: 订单已存在
+1202: 订单不存在
+
+
+
+以上是api的错误返回码。当api返回这个时，RECV_FAILED = -3，还有一下可能，这个需要看itc的log
+		NO_FOUND_USER		= -1, /*<无法找到用户*/
+		SECRET_KEY_ERROR	= -2, /*<密钥错误*/
+		NO_CMD_PERMISSION	= -3, /*<没有接口命令字权限*/
+		NO_IP_PERMISSION	= -4 /*<没有ip权限*/

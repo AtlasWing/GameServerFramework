@@ -1,0 +1,7 @@
+[Dir]
+PuttyDir=D:\dev\putty\
+
+[Server]
+UserName=banbencehua
+ServerIP=10.1.101.6
+ServerDir=Server/

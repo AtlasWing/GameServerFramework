@@ -1,0 +1,106 @@
+[LM_INFO 2011-11-28 14:37:48.948816] log_level=INFO-WARNING-ERROR-DEBUG log_path=../log/itc.log cfgpath=../cfg/itc.xml
+[LM_DEBUG 2011-11-28 14:37:48.964440][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] userid=test secretkey=itc_client
+[LM_DEBUG 2011-11-28 14:37:48.980065][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_GET_BALANCE cmd=0x0100
+[LM_DEBUG 2011-11-28 14:37:48.980065][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_PREPAY cmd=0x0101
+[LM_DEBUG 2011-11-28 14:37:48.995689][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_COMMIT cmd=0x0102
+[LM_DEBUG 2011-11-28 14:37:49.011314][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_ROLLBACK cmd=0x0103
+[LM_DEBUG 2011-11-28 14:37:49.011314][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_SAVE cmd=0x0104
+[LM_DEBUG 2011-11-28 14:37:49.026938][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_PAY cmd=0x0105
+[LM_DEBUG 2011-11-28 14:37:49.026938][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_ACCTINFO cmd=0x0106
+[LM_DEBUG 2011-11-28 14:37:49.026938][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_TRANSFER cmd=0x0107
+[LM_DEBUG 2011-11-28 14:37:49.042563][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_TRANSFER_BYORDER cmd=0x0108
+[LM_DEBUG 2011-11-28 14:37:49.058187][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] ip=127.0.0.1
+[LM_DEBUG 2011-11-28 14:37:49.058187][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log]  
+[LM_INFO 2011-11-28 14:37:49.089436] tcp server listen at: :7100
+[LM_INFO 2011-11-28 14:37:49.089436] itcser start
+[LM_INFO 2011-11-28 14:40:18.506530] log_level=INFO-WARNING-ERROR-DEBUG log_path=../log/itc.log cfgpath=../cfg/itc.xml
+[LM_DEBUG 2011-11-28 14:40:18.506530][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] userid=test secretkey=itc_client
+[LM_DEBUG 2011-11-28 14:40:18.522154][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_GET_BALANCE cmd=0x0100
+[LM_DEBUG 2011-11-28 14:40:18.522154][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_PREPAY cmd=0x0101
+[LM_DEBUG 2011-11-28 14:40:18.537779][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_COMMIT cmd=0x0102
+[LM_DEBUG 2011-11-28 14:40:18.537779][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_ROLLBACK cmd=0x0103
+[LM_DEBUG 2011-11-28 14:40:18.553403][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_SAVE cmd=0x0104
+[LM_DEBUG 2011-11-28 14:40:18.553403][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_PAY cmd=0x0105
+[LM_DEBUG 2011-11-28 14:40:18.569028][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_ACCTINFO cmd=0x0106
+[LM_DEBUG 2011-11-28 14:40:18.569028][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_TRANSFER cmd=0x0107
+[LM_DEBUG 2011-11-28 14:40:18.584652][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] strcmd=CMD_REQ_TRANSFER_BYORDER cmd=0x0108
+[LM_DEBUG 2011-11-28 14:40:18.600277][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log] ip=127.0.0.1
+[LM_DEBUG 2011-11-28 14:40:18.600277][..\..\..\..\stdc++\eboost_1_46_1\src\logging.cpp 74 boost::utils::logging::write_log]  
+[LM_INFO 2011-11-28 14:40:18.631526] tcp server listen at: :7100
+[LM_INFO 2011-11-28 14:40:18.631526] itcser start
+[LM_INFO 2011-11-28 14:43:05.735553] log_level=INFO-WARNING-ERROR-DEBUG log_path=../log/itc.log cfgpath=../cfg/itc.xml
+[LM_DEBUG 2011-11-28 14:43:05.735553] userid=test secretkey=itc_client
+[LM_DEBUG 2011-11-28 14:43:05.735553] strcmd=CMD_REQ_GET_BALANCE cmd=0x0100
+[LM_DEBUG 2011-11-28 14:43:05.751178] strcmd=CMD_REQ_PREPAY cmd=0x0101
+[LM_DEBUG 2011-11-28 14:43:05.751178] strcmd=CMD_REQ_COMMIT cmd=0x0102
+[LM_DEBUG 2011-11-28 14:43:05.751178] strcmd=CMD_REQ_ROLLBACK cmd=0x0103
+[LM_DEBUG 2011-11-28 14:43:05.751178] strcmd=CMD_REQ_SAVE cmd=0x0104
+[LM_DEBUG 2011-11-28 14:43:05.751178] strcmd=CMD_REQ_PAY cmd=0x0105
+[LM_DEBUG 2011-11-28 14:43:05.766802] strcmd=CMD_REQ_ACCTINFO cmd=0x0106
+[LM_DEBUG 2011-11-28 14:43:05.766802] strcmd=CMD_REQ_TRANSFER cmd=0x0107
+[LM_DEBUG 2011-11-28 14:43:05.766802] strcmd=CMD_REQ_TRANSFER_BYORDER cmd=0x0108
+[LM_DEBUG 2011-11-28 14:43:05.766802] ip=127.0.0.1
+[LM_DEBUG 2011-11-28 14:43:05.782427]  
+[LM_INFO 2011-11-28 14:43:05.798051] tcp server listen at: :7100
+[LM_INFO 2011-11-28 14:43:05.798051] itcser start
+[LM_INFO 2011-11-28 14:44:14.295859] client(127.0.0.1:3418) connected
+[LM_INFO 2011-11-28 14:44:14.295859] recv from(127.0.0.1:3418)
+[LM_INFO 2011-11-28 14:44:14.327108] start save: ip=127.0.0.1 ip_forward=127.0.0.2 uin=123456 dstuin=32145 amount=10011 portal_seq=test source=test11 remark=test11111
+[LM_INFO 2011-11-28 14:44:14.327108] end save: ip=127.0.0.1 code=0 uin=123456 errmsg=
+[LM_INFO 2011-11-28 14:44:53.966465] client(127.0.0.1:3418) closed
+[LM_INFO 2011-11-28 14:44:53.966465] client(127.0.0.1:3421) connected
+[LM_INFO 2011-11-28 14:44:53.966465] recv from(127.0.0.1:3421)
+[LM_INFO 2011-11-28 14:44:53.982089] start get_balance: ip=127.0.0.1 ip_forward=127.0.0.1 uin=123445
+[LM_INFO 2011-11-28 14:44:53.982089] end get_balance: ip=127.0.0.1 code=0 uin=123445 balance=100 errmsg=
+[LM_INFO 2011-11-28 14:45:29.418455] client(127.0.0.1:3421) closed
+[LM_INFO 2011-11-28 14:45:29.418455] client(127.0.0.1:3423) connected
+[LM_INFO 2011-11-28 14:45:29.418455] recv from(127.0.0.1:3423)
+[LM_INFO 2011-11-28 14:45:29.434080] start prepay: ip=127.0.0.1 ip_forward=127.0.0.3 uin=12345 amount=103 item_id=11111 timeout=10 source=test10 transinfo=aaaa
+[LM_INFO 2011-11-28 14:45:29.434080] end prepay: ip=127.0.0.1 code=0 uin=12345 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-11-28 14:45:29.449704] recv from(127.0.0.1:3423)
+[LM_INFO 2011-11-28 14:45:29.449704] start commit: ip=127.0.0.1 ip_forward=127.0.0.4 uin=12345 amount=103 billno=test100 source=test10
+[LM_INFO 2011-11-28 14:45:29.465329] end commit: ip=127.0.0.1 cod=0 uin=12345 errmsg=
+[LM_INFO 2011-11-28 14:47:39.681996] client(127.0.0.1:3423) closed
+[LM_INFO 2011-11-28 14:47:39.681996] client(127.0.0.1:3426) connected
+[LM_INFO 2011-11-28 14:47:39.681996] recv from(127.0.0.1:3426)
+[LM_INFO 2011-11-28 14:47:39.681996] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=1289 amount=109 item_id=178 timeout=3 source=bbbbb transinfo=ttttt
+[LM_INFO 2011-11-28 14:47:39.697622] end prepay: ip=127.0.0.1 code=0 uin=1289 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-11-28 14:47:39.713248] recv from(127.0.0.1:3426)
+[LM_INFO 2011-11-28 14:47:39.713248] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=1289 amount=109 billno=test100 source=bbbbb
+[LM_INFO 2011-11-28 14:47:39.713248] end rollback: ip=127.0.0.1 code=0 uin=1289 errmsg=
+[LM_INFO 2011-11-28 14:48:24.606459] client(127.0.0.1:3426) closed
+[LM_INFO 2011-11-28 14:48:24.606459] client(127.0.0.1:3430) connected
+[LM_INFO 2011-11-28 14:48:24.622085] recv from(127.0.0.1:3430)
+[LM_INFO 2011-11-28 14:48:24.622085] start pay: ip=127.0.0.1 ip_forward=127.0.0.7 uin=1876 amount=65 item_it=23 source=hjhjhj
+[LM_INFO 2011-11-28 14:48:24.622085] end pay: ip=127.0.0.1 code=0 balance=100 billno=test100 errmsg=
+[LM_INFO 2011-11-28 14:49:01.780475] client(127.0.0.1:3430) closed
+[LM_INFO 2011-11-28 14:49:01.796101] client(127.0.0.1:3434) connected
+[LM_INFO 2011-11-28 14:49:01.796101] recv from(127.0.0.1:3434)
+[LM_INFO 2011-11-28 14:49:01.796101] start req acctinfo: ip=127.0.0.1 ip_forward=127.0.0.8 uin=0
+[LM_INFO 2011-11-28 14:49:01.796101] end req acctinfo: ip=127.0.0.1 code=0 uin=0 stat=2 balance=101 expire_time=1322462941 errmsg=
+[LM_INFO 2011-11-28 14:49:02.968043] client(127.0.0.1:3434) closed
+[LM_INFO 2011-11-28 14:50:10.362550] client(127.0.0.1:3442) connected
+[LM_INFO 2011-11-28 14:50:10.362550] recv from(127.0.0.1:3442)
+[LM_INFO 2011-11-28 14:50:10.362550] start req acctinfo: ip=127.0.0.1 ip_forward=127.0.0.8 uin=0
+[LM_INFO 2011-11-28 14:50:10.378176] end req acctinfo: ip=127.0.0.1 code=0 uin=0 stat=2 balance=101 expire_time=1322463010 errmsg=
+[LM_INFO 2011-11-28 14:50:11.518866] client(127.0.0.1:3442) closed
+[LM_INFO 2011-11-28 14:51:12.350495] client(127.0.0.1:3482) connected
+[LM_INFO 2011-11-28 14:51:12.350495] recv from(127.0.0.1:3482)
+[LM_INFO 2011-11-28 14:51:12.350495] start req acctinfo: ip=127.0.0.1 ip_forward=127.0.0.8 uin=1265598907
+[LM_INFO 2011-11-28 14:51:12.366121] end req acctinfo: ip=127.0.0.1 code=0 uin=1265598907 stat=2 balance=101 expire_time=1322463072 errmsg=
+[LM_INFO 2011-11-28 14:51:54.899821] client(127.0.0.1:3482) closed
+[LM_INFO 2011-11-28 14:51:54.915447] client(127.0.0.1:3486) connected
+[LM_INFO 2011-11-28 14:51:54.915447] recv from(127.0.0.1:3486)
+[LM_INFO 2011-11-28 14:51:54.915447] start transfer: ip=127.0.0.1 ip_forward=127.0.0.9 uin=12345 dstuin=9876 amount=777 fee=10 source=khkhii remark=dfdfdf
+[LM_INFO 2011-11-28 14:51:54.915447] end transfer: ip=127.0.0.1 code=0 uin=12345 uin_balance=10 dstuin=9876 dstuin_balance=110 billno=transfer1000 errmsg=
+[LM_INFO 2011-11-28 14:52:54.651061] client(127.0.0.1:3486) closed
+[LM_INFO 2011-11-28 14:52:54.651061] client(127.0.0.1:3488) connected
+[LM_INFO 2011-11-28 14:52:54.666686] recv from(127.0.0.1:3488)
+[LM_INFO 2011-11-28 14:52:54.666686] start prepay: ip=127.0.0.1 ip_forward=127.0.0.10 uin=123456 amount=90 item_id=111 timeout=10 source=rrrrrr transinfo=eeeeee
+[LM_INFO 2011-11-28 14:52:54.666686] end prepay: ip=127.0.0.1 code=0 uin=123456 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-11-28 14:53:14.963561] client(127.0.0.1:3488) closed
+[LM_INFO 2011-11-28 14:53:14.963561] client(127.0.0.1:3489) connected
+[LM_INFO 2011-11-28 14:53:14.963561] recv from(127.0.0.1:3489)
+[LM_INFO 2011-11-28 14:53:14.979186] start transfer_byorder: ip=127.0.0.1 ip_forward=127.0.0.11 uin=87876 order_creator=123456 amount=90 billno=test100 source=rrrrrr
+[LM_INFO 2011-11-28 14:53:14.979186] end transfer_byorder: ip=127.0.0.1 code=0 uin=87876 balance=102 errmsg=
+[LM_INFO 2011-11-28 14:53:44.322936] client(127.0.0.1:3489) closed

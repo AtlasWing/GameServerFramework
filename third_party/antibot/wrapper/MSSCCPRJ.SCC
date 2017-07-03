@@ -1,0 +1,5 @@
+SCC = This is a source code control file
+
+[antibot_wrapper.vcxproj]
+SCC_Aux_Path = "P4SCC#172.17.100.20:1666##Zhuyi##zhy_x52"
+SCC_Project_Name = Perforce Project

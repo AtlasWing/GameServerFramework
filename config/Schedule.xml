@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<!--
+	Time 节点配置:
+	month 有效范围[0-11], -1表示无限制
+	monthDay 有效范围[1-31], -1表示无限制
+	weekDay 有效范围[0-6], -1表示无限制
+	hour 有效范围[0-23]
+	minute 有效范围[0-59]
+	sec 有效范围[0-59]
+	-->
+	<!--
+	Event 节点配置:
+    serverType 处理事件的服务器类型(ServerType), 0表示没有限制
+    ZONESERVER		=	1,		///< 服务器管理器
+    DATASERVER	    =	2,		///< 数据服务器
+    LOGICSERVER	    =	5,		///< 逻辑服务器 
+    GATEWAYSERVER	=	7,		///< 网关服务器
+
+    id 事件类型(eServerEvent)
+        4:每月1号
+        5:每周一
+        6:每天0点
+        8:神秘商店
+        9:体力任务
+		14:开始显示活动
+		15:活动开始
+	param 附带参数
+	-->
+    <!--以下为系统功能事件-->
+    <Schedule id="1">
+		<!-- 每月的1号0点事件,错开30秒避免0点整的负载太大-->
+        <Time month="-1" monthDay="1" weekDay="-1" hour="0" minute="0" sec="40"/>
+        <Event serverType="0" id="4" param=""/>
+    </Schedule>
+    <Schedule id="2">
+		<!-- 每周一0点事件,错开25秒避免0点整的负载太大-->
+        <Time month="-1" monthDay="-1" weekDay="1" hour="0" minute="0" sec="25"/>
+        <Event serverType="0" id="5" param=""/>
+    </Schedule>
+    <Schedule id="3">
+		<!-- 每天0点事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="0" minute="0" sec="3"/>
+        <Event serverType="0" id="6" param=""/>
+    </Schedule>
+    <Schedule id="4">
+		<!-- 每天12:00神秘商店事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="12" minute="0" sec="0"/>
+        <Event serverType="0" id="8" param=""/>
+    </Schedule>
+    <Schedule id="5">
+		<!-- 每天18:00神秘商店事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="18" minute="0" sec="0"/>
+        <Event serverType="0" id="8" param=""/>
+    </Schedule>
+    <Schedule id="6">
+		<!-- 每天21:00神秘商店事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="21" minute="0" sec="0"/>
+        <Event serverType="0" id="8" param=""/>
+    </Schedule>
+    <Schedule id="7">
+		<!-- 每天7:00体力任务事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="7" minute="0" sec="0"/>
+        <Event serverType="0" id="9" param=""/>
+    </Schedule>
+    <Schedule id="8">
+		<!-- 每天8:00体力任务事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="8" minute="0" sec="0"/>
+        <Event serverType="0" id="10" param=""/>
+    </Schedule>
+    <Schedule id="9">
+		<!-- 每天12:00体力任务事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="12" minute="0" sec="0"/>
+        <Event serverType="0" id="9" param=""/>
+    </Schedule>
+    <Schedule id="10">
+		<!-- 每天13:00体力任务事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="13" minute="0" sec="0"/>
+        <Event serverType="0" id="10" param=""/>
+    </Schedule>
+    <Schedule id="11">
+		<!-- 每天20:00体力任务事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="20" minute="0" sec="0"/>
+        <Event serverType="0" id="9" param=""/>
+    </Schedule>
+    <Schedule id="12">
+		<!-- 每天21:00体力任务事件-->
+        <Time month="-1" monthDay="-1" weekDay="-1" hour="21" minute="0" sec="0"/>
+        <Event serverType="0" id="10" param=""/>
+    </Schedule>
+    <Schedule id="13">
+        <!-- 天梯榜奖励事件-->
+        <Time month="-1" monthDay="-1" weekDay="1" hour="0" minute="0" sec="13"/>
+        <Event serverType="1" id="11" param=""/>
+    </Schedule>
+    <Schedule id="14">
+        <!-- 天梯榜重置事件-->
+        <Time month="-1" monthDay="1" weekDay="-1" hour="0" minute="0" sec="13"/>
+        <Event serverType="1" id="12" param=""/>
+    </Schedule>
+    <!--以上为系统功能事件-->
+</Config>

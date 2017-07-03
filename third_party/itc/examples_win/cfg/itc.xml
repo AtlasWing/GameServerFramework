@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<itc_cfg>
+	<tcp_server>
+		<listen ip="" port="7100" />
+		<thrcount>10</thrcount>
+	</tcp_server>
+	
+	<user_infos>
+		<user_info>
+			<userid>test</userid>
+			<secretkey>itc_client</secretkey>
+			<allow_cmds>
+				<cmd>CMD_REQ_GET_BALANCE</cmd>
+				<cmd>CMD_REQ_PREPAY</cmd>
+				<cmd>CMD_REQ_COMMIT</cmd>
+				<cmd>CMD_REQ_ROLLBACK</cmd>
+				<cmd>CMD_REQ_SAVE</cmd>
+				<cmd>CMD_REQ_PAY</cmd>
+				<cmd>CMD_REQ_ACCTINFO</cmd>
+				<cmd>CMD_REQ_TRANSFER</cmd>
+				<cmd>CMD_REQ_TRANSFER_BYORDER</cmd>
+			</allow_cmds>
+			<allow_ips>
+				<ip>127.0.0.1</ip>
+			</allow_ips>
+		</user_info>
+	</user_infos>	
+
+</itc_cfg>

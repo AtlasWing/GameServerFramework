@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--游戏逻辑无关,每个区需要定制-->
+<Config>
+    <Share>
+		<!-- zoneServer编号,SERVER_LIST的zoneServer项的编号 -->
+		<ZONE_SERVER_ID>1</ZONE_SERVER_ID>
+		<!-- zoneServer的域名或IP -->
+        <ZONE_SERVER_IP>{internalIP}</ZONE_SERVER_IP>
+		<!-- 区服务器管理器网络端口号 -->
+        <ZONE_SERVER_PORT>2{zoneNum}01</ZONE_SERVER_PORT>
+
+		<!-- 服务器主数据库连接串 -->
+        <ZONE_DATA_MYSQL_SERVER>mysql://{zoneGameDBServerUserName}:{zoneGameDBServerUserPassword}@{zoneGameDBServerIP}:3306/zoneGame_{zoneNum}</ZONE_DATA_MYSQL_SERVER>
+		<!-- 服务器主数据库版本号 -->
+        <ZONE_DATA_MYSQL_SERVER_VERSION>2017063001</ZONE_DATA_MYSQL_SERVER_VERSION>
+		<!-- 服务器备用数据库连接串 -->
+        <ZONE_DATA_MYSQL_SERVER_SLAVE></ZONE_DATA_MYSQL_SERVER_SLAVE>
+        <!-- 好友数据库连接串,留空表示使用主数据库 -->
+        <FRIEND_DATA_MYSQL_SERVER></FRIEND_DATA_MYSQL_SERVER>
+		<!-- 验证数据库连接串 -->
+        <ADMIN_DATA_MYSQL_SERVER>mysql://{zoneGameDBServerUserName}:{zoneGameDBServerUserPassword}@{zoneGameDBServerIP}:3306/admin</ADMIN_DATA_MYSQL_SERVER>
+		<!-- 日志数据库连接串 -->
+        <INFO_DATA_MYSQL_SERVER></INFO_DATA_MYSQL_SERVER>
+		<!-- 日志备用数据库连接串 -->
+        <INFO_DATA_MYSQL_SERVER_SLAVE></INFO_DATA_MYSQL_SERVER_SLAVE>
+
+		<!-- 日志打印级别 -->
+        <LOG_LEVEL>debug</LOG_LEVEL>
+		<!-- 运行时数据目录.dataPath不能包括结尾符'/' -->
+		<SERVER_RUN_DATA_DIR>{dataPath}/</SERVER_RUN_DATA_DIR>
+
+		<!-- 运行时日志目录.logPath不能包括结尾符'/' -->
+		<SERVER_LOG_DIR>{logPath}/</SERVER_LOG_DIR>
+
+		<!-- 平台类型,决定了accountName的前缀0:测试账号登陆,1:趣游,2:腾讯游戏大厅 -->
+        <PLATFORM_TYPE>{platformType}</PLATFORM_TYPE>
+
+        <!--服务器key,和平台验证充值,登陆用-->
+        <ZONE_VERIFY_KEY>24a4cf6bfb2c2fe6fcf6db4c07e8a5b4</ZONE_VERIFY_KEY>
+
+    </Share>
+    <zoneServer>
+		<!-- 实时输出日志名 -->
+        <LOG_FILE>{logPath}/zoneserver.log</LOG_FILE>
+        <ADMIN_SERVER_LIST>
+            ip="{adminServerIP}" port="{adminServerPort}";
+        </ADMIN_SERVER_LIST>
+        <!-- 
+        区内服务器列表,部署相关,可实现分布式服务器.
+        zoneServer服务器管理器
+		dataServer的内网IP上9001端口监听,提供HTTP服务,提供腾讯要求的充值回调服务,腾讯要求必须在9001端口.如果不在腾讯云服务器部署,可以去掉这个监听.
+		gatewayServer的externListenConfig,如果是腾讯云服务器上,配置QQCLOUDUSERCLIENT,如果是在其他服务器上使用USERCLIENT.externListenConfig中配置的IP可以是域名,如果是IP必须是外网可访问.腾讯云服务器的域名必须单独配置,并和IP端口对应
+		id="服务器编号" type="服务器类型 1网关兼管理服务器(gatewayServer) 2数据服务器(dataServer) 4逻辑服务器(logicServer)" name:"服务器名" ip="服务器IP，内网IP" port="服务器端口号" needQuickAck="网络包快速确认网关服务器填1，其余填0" zipMethod="网络包压缩方法(0:不压缩;1:zlib压缩,速度慢,压缩比高;2:Snappy压缩,速度快,压缩比低)网关填1，其余填0或者2"
+        externListenConfig="连接类型(USERCLIENT 普通平台玩家连接,QQCLOUDUSERCLIENT QQ平台玩家连接,HTTPCLIENT HTTP连接,TELNETCLIENT，TELNET连接):网络类型(0,不区分;1,联通,2,电信):绑定IP(*代表所有本机IP):端口"
+        -->
+        <SERVER_LIST>
+            id="1" type="1" name="zoneServer" ip="{internalIP}" port="2{zoneNum}01" hasUnixSocket="1" zipMethod="1" checkHeartTick="1" heartTickTimerInMsec="30000" needQuickAck="1" externListenConfig="USERCLIENT:1:{internalIP}:2{zoneNum}01";
+            id="2" type="2" name="dataServer" ip="{internalIP}" port="2{zoneNum}02" hasUnixSocket="1" zipMethod="0" checkHeartTick="1" heartTickTimerInMsec="120000" needQuickAck="0" externListenConfig="HTTPCLIENT:0:{internalIP}:9001";
+            id="3" type="5" name="logicServer" ip="{internalIP}" port="2{zoneNum}03" hasUnixSocket="1" zipMethod="0" checkHeartTick="1" heartTickTimerInMsec="120000" needQuickAck="0" externListenConfig="";
+            id="4" type="7" name="gatewayServer" ip="{internalIP}" port="2{zoneNum}04" hasUnixSocket="1" zipMethod="1" checkHeartTick="1" heartTickTimerInMsec="30000" needQuickAck="1" externListenConfig="USERCLIENT:1:{externalIP_CT}:2{zoneNum}71";
+        </SERVER_LIST>
+    </zoneServer>
+    <gatewayServer>
+		<!-- 实时输出日志名 -->
+        <LOG_FILE>{logPath}/gatewayserver.log</LOG_FILE>
+		<!-- 心跳超时时间 -->
+        <HEART_TICK_TIME_IN_SEC>60</HEART_TICK_TIME_IN_SEC>
+    </gatewayServer>
+    <dataServer>
+		<!-- 实时输出日志名 -->
+        <LOG_FILE>{logPath}/dataserver.log</LOG_FILE>
+        <!--sql序列化的文件-->
+        <SQL_MEMORY_MAPPED_FILE>{dataPath}/dataServerSql.dat</SQL_MEMORY_MAPPED_FILE>
+    </dataServer>
+    <logicServer>
+		<!-- 实时输出日志名 -->
+        <LOG_FILE>{logPath}/logicserver.log</LOG_FILE>
+    </logicServer>
+</Config>

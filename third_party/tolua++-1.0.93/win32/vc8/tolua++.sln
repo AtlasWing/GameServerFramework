@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "..\..\..\lua-5.1.4\lua.vcproj", "{948A5CA0-202B-4777-A6D8-BE4140E5DEBA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tolualib", "tolualib.vcproj", "{A6B7E816-A0CD-4DD8-A408-3CDCB7833C52}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "toluaexe", "toluaexe.vcproj", "{AB19DAC1-0F46-4C5E-A81E-DD959B70F11E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{948A5CA0-202B-4777-A6D8-BE4140E5DEBA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{948A5CA0-202B-4777-A6D8-BE4140E5DEBA}.Debug|Win32.Build.0 = Debug|Win32
+		{948A5CA0-202B-4777-A6D8-BE4140E5DEBA}.Release|Win32.ActiveCfg = Release|Win32
+		{948A5CA0-202B-4777-A6D8-BE4140E5DEBA}.Release|Win32.Build.0 = Release|Win32
+		{A6B7E816-A0CD-4DD8-A408-3CDCB7833C52}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A6B7E816-A0CD-4DD8-A408-3CDCB7833C52}.Debug|Win32.Build.0 = Debug|Win32
+		{A6B7E816-A0CD-4DD8-A408-3CDCB7833C52}.Release|Win32.ActiveCfg = Release|Win32
+		{A6B7E816-A0CD-4DD8-A408-3CDCB7833C52}.Release|Win32.Build.0 = Release|Win32
+		{AB19DAC1-0F46-4C5E-A81E-DD959B70F11E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AB19DAC1-0F46-4C5E-A81E-DD959B70F11E}.Debug|Win32.Build.0 = Debug|Win32
+		{AB19DAC1-0F46-4C5E-A81E-DD959B70F11E}.Release|Win32.ActiveCfg = Release|Win32
+		{AB19DAC1-0F46-4C5E-A81E-DD959B70F11E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

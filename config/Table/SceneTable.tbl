@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSystem>
+	<SceneTable>
+		<ConfigItem ID="1" Name="Scene_Main" SceneType="2" />
+		<ConfigItem ID="2" Name="Scene_HeavenRoad_KuangDong" SceneType="1" />
+		<ConfigItem ID="3" Name="Scene_HeavenRoad_Vastness" SceneType="1" />
+		<ConfigItem ID="4" Name="Scene_HeavenRoad_Mirage" SceneType="1" />
+		<ConfigItem ID="5" Name="Scene_HeavenRoad_Luxuriant" SceneType="1" />
+		<ConfigItem ID="6" Name="Scene_HeavenRoad_Lava" SceneType="1" />
+		<ConfigItem ID="7" Name="Scene_HeavenRoad_Snow" SceneType="1" />
+		<ConfigItem ID="8" Name="Scene_HeavenRoad_Castle" SceneType="1" />
+		<ConfigItem ID="9" Name="Scene_HeavenRoad_Johnny" SceneType="1" />
+		<ConfigItem ID="10" Name="Scene_HeavenRoad_Mirage_2" SceneType="1" />
+		<ConfigItem ID="11" Name="Scene_HeavenRoad_Snow_2" SceneType="1" />
+		<ConfigItem ID="12" Name="Scene_HeavenRoad_Luxuriant_2" SceneType="1" />
+		<ConfigItem ID="13" Name="Scene_HeavenRoad_Lava_2" SceneType="1" />
+		<ConfigItem ID="14" Name="Scene_HeavenRoad_Vastness_2" SceneType="1" />
+		<ConfigItem ID="15" Name="Scene_HeavenRoad_Vastness_3" SceneType="1" />
+		<ConfigItem ID="16" Name="Scene_HeavenRoad_Vastness_4" SceneType="1" />
+		<ConfigItem ID="17" Name="Scene_HeavenRoad_Vastness_5" SceneType="1" />
+		<ConfigItem ID="18" Name="Scene_HeavenRoad_Mirage_3" SceneType="1" />
+		<ConfigItem ID="100" Name="Scene_XianHaiMiJing_Exp" SceneType="1" />
+		<ConfigItem ID="101" Name="Scene_XianHaiMiJing_Coin" SceneType="4" />
+		<ConfigItem ID="102" Name="Scene_XianHaiMiJing_Item" SceneType="8" />
+		<ConfigItem ID="150" Name="Scene_Discovery" SceneType="5" />
+		<ConfigItem ID="151" Name="Scene_Discovery" SceneType="9" />
+		<ConfigItem ID="201" Name="Scene_Landing" SceneType="3" />
+		<ConfigItem ID="300" Name="Scene_MonsterGambling" SceneType="6" />
+		<ConfigItem ID="500" Name="Scene_JJC_1V1" SceneType="7" />
+	</SceneTable>
+</ConfigSystem>

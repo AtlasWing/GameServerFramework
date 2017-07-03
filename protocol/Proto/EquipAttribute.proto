@@ -1,0 +1,53 @@
+package protocol.item;
+
+message EquipAttribute
+{
+    repeated AttributeData attrData = 2;
+};
+
+message AttributeData
+{
+    required uint32 attrID          = 1;
+    required uint32 qualityID       = 2;
+    required uint32 attrValue       = 3;
+};
+
+message AttributeList
+{
+    optional uint32 addAttackValue          = 1;
+    optional uint32 addAttackPercent        = 2;
+    optional uint32 addDefenceValue         = 3;
+    optional uint32 addDefencePercent       = 4;
+    optional uint32 addMagicAttackValue     = 5;
+    optional uint32 addMagicAttackPercent   = 6;
+    optional uint32 addMPValue              = 7;
+    optional uint32 addMPPercent            = 8;
+    optional uint32 addHPValue              = 9;
+    optional uint32 addHPPercent            = 10;
+    optional uint32 addMagicDefenceValue    = 11;
+    optional uint32 addMagicDefencePercent  = 12;
+    optional uint32 subRemoteHurt           = 13;
+    optional uint32 subCloseHurt            = 14;
+    optional uint32 subNormalHurt           = 15;
+    optional uint32 subMagicHurt            = 16;
+    optional uint32 hitValue                = 17;
+    optional uint32 appendHit               = 18;
+    optional uint32 avoidValue              = 19;
+    optional uint32 appendAvoid             = 20;
+    optional uint32 crit                    = 21;
+    optional uint32 appendCrit              = 22;
+    optional uint32 critDefence             = 23;
+    optional uint32 appendCritDefence       = 24;
+    optional uint32 critValue               = 25;
+    optional uint32 pureDamage              = 26;
+    optional uint32 absorbBlood             = 27;
+    optional uint32 rebound                 = 28;
+    optional uint32 reboundPercent          = 29;
+    optional uint32 killAddHP               = 30;
+    optional uint32 hitAddHP                = 31;
+    optional uint32 beAttackAddHP           = 32;
+    optional uint32 killAddMP               = 33;
+    optional uint32 hitAddMP                = 34;
+    optional uint32 beAttackAddMP           = 35;
+    optional uint32 addMoveSpeed            = 36;
+};

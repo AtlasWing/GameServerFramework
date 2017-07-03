@@ -1,0 +1,50 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            普通功能配置
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:element name="Config" type="ConfigType"/>
+
+    <xsd:complexType name="ConfigType">
+        <xsd:sequence>
+            <xsd:element name="Share" type="ShareType"  minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="zoneServer" type="ZoneServerType"  minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="dataServer" type="DataServerType"  minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="logicServer" type="LogicServerType"  minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="gatewayServer" type="GatewayServerType"  minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ShareType">
+        <xsd:sequence>
+            <xsd:element name="param" type="xsd:positiveInteger"  minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ZoneServerType">
+        <xsd:sequence>
+            <xsd:element name="param" type="xsd:positiveInteger"  minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="DataServerType">
+        <xsd:sequence>
+            <xsd:element name="param" type="xsd:positiveInteger"  minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="LogicServerType">
+        <xsd:sequence>
+            <xsd:element name="param" type="xsd:positiveInteger"  minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="GatewayServerType">
+        <xsd:sequence>
+            <xsd:element name="param" type="xsd:positiveInteger"  minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
+

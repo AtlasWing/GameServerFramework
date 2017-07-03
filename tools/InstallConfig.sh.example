@@ -1,0 +1,55 @@
+#!/bin/bash
+
+escapeString()
+{
+    echo "$1" | sed 's:[]\[\^\$\.\*\/]:\\&:g'
+}
+# 代码库路径
+codeRepos="http://10.1.101.233/svn/dev/trunk/server"
+# 代码库目录
+codeDir=server
+# 代码库用户名和密码
+svnUserName=""
+svnPassword=""
+###########以上只在新建内网区时填写############
+# 日志目录
+orgLogPath="$HOME/log"
+logPath=`escapeString $orgLogPath`
+orgDataPath="$HOME/data"
+dataPath=`escapeString $orgDataPath`
+# 区号
+zoneNum=
+zoneName=""
+# 平台类型0:测试账号登陆
+platformType=2
+# 区硬件服务器IP和端口
+#内网IP
+internalIP=`escapeString "10.1.101.230"`
+#外网电信IP
+externalIP_CT=`escapeString "10.1.101.230"`
+#外网联通IP
+externalIP_CU=`escapeString "10.1.101.230"`
+zoneServerPort="2"$zoneNum"01"
+# 区的数据库
+zoneGameDBServerIP=`escapeString "10.1.101.233"`
+zoneGameDBServerUserName="root"
+zoneGameDBServerUserPassword="123456"
+zoneInfoDBServerIP=`escapeString "10.1.101.233"`
+zoneInfoDBServerUserName="root"
+zoneInfoDBServerUserPassword="123456"
+# 平台服务器的配置
+platformServerIP=`escapeString "10.1.101.233"`
+platformServerPort="7001"
+platformDBServerIP=`escapeString "10.1.101.233"`
+platformDBServerUserName="root"
+platformDBServerUserPassword="123456"
+platformLogUrl_1=""
+platformLogGameID_1=
+platformLogGameVerifyKey_1=
+# admin服务器IP和端口
+adminServerIP=`escapeString "10.1.101.233"`
+adminServerPort="9003"
+# admin数据库配置
+adminDBServerIP=`escapeString "10.1.101.233"`
+adminDBServerUserName="root"
+adminDBServerUserPassword="123456"

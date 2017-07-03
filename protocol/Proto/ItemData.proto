@@ -1,0 +1,63 @@
+import "protocol/Proto/EquipAttribute.proto";
+package protocol.item;
+
+message ItemBinary
+{
+	required uint64 globalID = 1;
+	required uint32 baseID = 2;
+    required uint32 location = 3;
+    required ItemAttribute attr = 4;
+    required EquipAttribute equipAttr = 5;
+};
+
+message ItemAttribute
+{
+    required uint32 num = 1;
+    optional bool bind = 2;
+    optional uint32 quality = 3;
+    optional uint32 grade = 4;
+    optional uint32 identify = 5;
+    optional bool received = 6;
+    optional bool used = 7;
+    optional bool viewed = 8;
+};
+
+message UseItemData
+{
+    optional string destUserName    =   1;
+    optional uint32 destUserID      =   2;
+    optional bool destUserOnline    =   3;
+};
+
+message MysteryShopData
+{
+    required uint32 gridID      = 1;
+    required uint32 itemBaseID  = 2;
+    required uint32 num         = 3;
+    required bool   bindType    = 4;
+    required uint32 quality     = 5;
+    required uint32 identify    = 6;
+    required uint32 moneyType   = 7;
+    required uint32 money       = 8;
+    required bool   isDiscount  = 9;
+    required bool   isSell      = 10;
+};
+
+message ClubShopData
+{
+    required uint32 gridID      = 1;
+    required uint32 itemBaseID  = 2;
+    required uint32 num         = 3;
+    required uint32 moneyType   = 4;
+    required uint32 money       = 5;
+    required bool   isSell      = 6;
+};
+
+message MysteryShopBinary
+{
+    repeated MysteryShopData shopData = 1; 
+    required uint32 lastFreshTimeInSec= 2;
+    required uint32 todayFreshMysteryShopTimes = 3;
+    repeated ClubShopData clubShopData = 4; 
+    required uint32 todayFreshClubShopTimes = 5;
+};

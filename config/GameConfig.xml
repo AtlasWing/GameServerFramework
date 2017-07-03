@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--游戏逻辑相关,所有区相同-->
+<Config>
+    <Share>
+        <mapdir>config/map/</mapdir>
+        <tableDir>data/table/</tableDir>
+        <mapConfig>data/misc/MapConfig.xml</mapConfig>
+        <continentConfig>data/misc/ContinentConfig.xml</continentConfig>
+        <sceneConfig>config/SceneConfig.xml</sceneConfig>
+        <commonFuncConfig>config/CommonFuncConfig.xml</commonFuncConfig>
+        <!--QQGame配置文件-->
+        <QQGAME_CONFIG_FILE>data/misc/QQGameConfig.xml</QQGAME_CONFIG_FILE>
+
+        <!--task工作线程的数量.服务器内部消息量大,连接每个连接一个线程是可以接受的-->
+        <maxTaskMainThreadNum>64</maxTaskMainThreadNum>
+        <!--单个task工作线程处理的task数量-->
+        <maxTaskNumInOneMainThread>1</maxTaskNumInOneMainThread>
+
+        <maxTaskVerifyThreadNum>1</maxTaskVerifyThreadNum>
+        <maxTaskNumInOneVerifyThread>65534</maxTaskNumInOneVerifyThread>
+
+        <maxTaskSyncThreadNum>1</maxTaskSyncThreadNum>
+        <maxTaskNumInOneSyncThread>65534</maxTaskNumInOneSyncThread>
+
+        <maxTaskRecycleThreadNum>1</maxTaskRecycleThreadNum>
+        <maxTaskNumInOneRecycleThread>65534</maxTaskNumInOneRecycleThread>
+
+        <!--clientConnService的最大连接线程数量-->
+        <maxClientConnectThreadNum>1</maxClientConnectThreadNum>
+        <!--clientConnService的单个连接线程可以处理的最大连接数量-->
+        <maxClientNumInOneConnectThread>65534</maxClientNumInOneConnectThread>
+        <!--clientConnService的最大等待线程数量-->
+        <maxClientWaitThreadNum>1</maxClientWaitThreadNum>
+        <!--clientConnService的单个等待线程可以处理的最大连接数量-->
+        <maxClientNumInOneWaitThread>65534</maxClientNumInOneWaitThread>
+        <!--clientConnService的最大允许线程数量-->
+        <maxClientRunThreadNum>64</maxClientRunThreadNum>
+        <!--clientConnService的单个允许线程可以处理的最大连接数量-->
+        <maxClientNumInOneRunThread>1</maxClientNumInOneRunThread>
+
+        <!--task连接发送消息的缓存时间(微秒)-->
+        <taskConnSyncDataTimerInUSec>5000</taskConnSyncDataTimerInUSec>
+        <!--client连接发送消息的缓存时间(微秒)-->
+        <clientConnSyncDataTimerInUSec>8000</clientConnSyncDataTimerInUSec>
+
+        <!--内存释放的速度, [1,10]-->
+        <MEMORY_RELEASE_RATE>4</MEMORY_RELEASE_RATE>
+        <!--每个线程最大的内存缓存值(M)-->
+        <MAX_TOTAL_THREAD_CACHE_BYTES_IN_MILLION>8</MAX_TOTAL_THREAD_CACHE_BYTES_IN_MILLION>
+        <!--释放一次内存消耗的最大时间(毫秒)-->
+        <MAX_RELEASE_MEMORY_COST_TIME_IN_MSEC>8</MAX_RELEASE_MEMORY_COST_TIME_IN_MSEC>
+        <!--线程超时一次的时间-->
+        <THREAD_TIMEOUT_TIME_IN_MSEC>10000</THREAD_TIMEOUT_TIME_IN_MSEC>
+        <!--线程最多连续超时的次数-->
+        <THREAD_TIMEOUT_MAX_TIMES>20</THREAD_TIMEOUT_MAX_TIMES>
+        <!--打印服务器状态的定时器-->
+        <MONITOR_LOG_SERVER_STATUS_TIMER_IN_MSEC>37000</MONITOR_LOG_SERVER_STATUS_TIMER_IN_MSEC>
+		<!--线程随机数种子重置的时间(秒)-->
+		<THREAD_SEED_RESET_TIME_IN_SEC>3600</THREAD_SEED_RESET_TIME_IN_SEC>
+		<!--TICK线程超时时间(毫秒)-->
+		<MAX_TICK_TIME_OUT_TIME_IN_MSEC>1500</MAX_TICK_TIME_OUT_TIME_IN_MSEC>
+		<!--日志文件同步时间间隔(毫秒)-->
+		<SYNC_LOG_FILE_TIME_IN_MSEC>3700</SYNC_LOG_FILE_TIME_IN_MSEC>
+		<!--日志缓存最大空间限制(字节数),避免日志缓存占用内存太大-->
+		<MAX_LOG_WRITE_BUFFER_SIZE>512000</MAX_LOG_WRITE_BUFFER_SIZE>
+		<!--是否打开性能分析(0:关闭;1:打开)-->
+		<OPEN_PROFILE>0</OPEN_PROFILE>
+		<!--SNAPPY消息报压缩启用的最小阈值(字节数).根据压力调整此值.-->
+        <SNAPPY_PACKET_ZIP_MIN>180960</SNAPPY_PACKET_ZIP_MIN>
+		<!--消息报压缩启用的最小阈值(字节数).根据外网统计数据,对应的压缩比是0.70-0.71,根据压力调整此值.-->
+        <ZLIB_PACKET_ZIP_MIN>160</ZLIB_PACKET_ZIP_MIN>
+		<!--是否统计消息压缩大小-->
+        <NEED_PACKET_COMPRESS_STATISTICS>0</NEED_PACKET_COMPRESS_STATISTICS>
+		<!--ZLIB消息压缩的等级(3:FAST)-->
+        <ZLIB_COMPRESS_LEVEL>3</ZLIB_COMPRESS_LEVEL>
+		<!--ZLIB消息压缩的等级(3:FAST)-->
+        <MAX_COMPRESS_SIZE_STATISTICS_SIZE>10000</MAX_COMPRESS_SIZE_STATISTICS_SIZE>
+    </Share>
+    <zoneServer>
+        <!--心跳时间(毫秒)-->
+        <TICK_TIME_IN_MSEC>50</TICK_TIME_IN_MSEC>
+        <!-- ZoneServer的验证线程开二个线程 -->
+        <maxTaskVerifyThreadNum>16</maxTaskVerifyThreadNum>
+        <maxTaskNumInOneVerifyThread>32</maxTaskNumInOneVerifyThread>
+        <maxTaskSyncThreadNum>8</maxTaskSyncThreadNum>
+        <maxTaskNumInOneSyncThread>32</maxTaskNumInOneSyncThread>
+        <maxTaskRecycleThreadNum>2</maxTaskRecycleThreadNum>
+        <maxTaskNumInOneRecycleThread>512</maxTaskNumInOneRecycleThread>
+        <!-- Schedule 配置文件-->
+        <ScheduleConfig>config/Schedule.xml</ScheduleConfig>
+    </zoneServer>
+    <dataServer>
+        <!--心跳时间(毫秒)-->
+        <TICK_TIME_IN_MSEC>20</TICK_TIME_IN_MSEC>
+        <!--sql序列化的文件-->
+        <SQL_MEMORY_MAPPED_FILE>data/run/dataServerSql.dat</SQL_MEMORY_MAPPED_FILE>
+        <!--sql序列化的缓冲区大小(M)-->
+        <SQL_MEMORY_MAPPED_BUFFER_SIZE>50</SQL_MEMORY_MAPPED_BUFFER_SIZE>
+        <!--HTTP请求连接线程池最大数量-->
+        <MAX_HTTP_CLIENT_THREAD_POOL_NUM>4</MAX_HTTP_CLIENT_THREAD_POOL_NUM>
+        <!--单个HTTP请求线程最多同时处理的请求数量-->
+        <MAX_REQUEST_NUM_IN_ONE_HTTP_CLIENT>10</MAX_REQUEST_NUM_IN_ONE_HTTP_CLIENT>
+    </dataServer>
+    <gatewayServer>
+        <!--登陆会话的有效时间(毫秒)-->
+        <loginSessionTimeOutTimeInMsec>5000</loginSessionTimeOutTimeInMsec>
+        <!--心跳时间(毫秒)-->
+        <TICK_TIME_IN_MSEC>20</TICK_TIME_IN_MSEC>
+
+        <!-- gatewayServer的验证线程开二个线程 -->
+        <maxTaskVerifyThreadNum>16</maxTaskVerifyThreadNum>
+        <maxTaskNumInOneVerifyThread>32</maxTaskNumInOneVerifyThread>
+
+        <maxTaskSyncThreadNum>8</maxTaskSyncThreadNum>
+        <maxTaskNumInOneSyncThread>32</maxTaskNumInOneSyncThread>
+
+        <maxTaskRecycleThreadNum>2</maxTaskRecycleThreadNum>
+        <maxTaskNumInOneRecycleThread>512</maxTaskNumInOneRecycleThread>
+    </gatewayServer>
+    <logicServer>
+        <!--心跳时间(毫秒)-->
+        <TICK_TIME_IN_MSEC>20</TICK_TIME_IN_MSEC>
+        <scriptModule>script/logicServer/init.lua</scriptModule>
+    </logicServer>
+</Config>

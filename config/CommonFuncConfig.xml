@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--游戏功能所需要参数-->
+<Config immutable="true">
+    <Share>
+        <!--游戏数据库版本号-->
+        <ZONE_DATA_MYSQL_SERVER_VERSION>2016063001</ZONE_DATA_MYSQL_SERVER_VERSION>
+        <!--INFO数据库版本号-->
+        <INFO_DATA_MYSQL_SERVER_VERSION>2016063001</INFO_DATA_MYSQL_SERVER_VERSION>
+        <!--等级段长度, 即每X级一个阶段-->
+        <LEVEL_PART_LEN>3</LEVEL_PART_LEN>
+        <!--地图的最大格子宽度-->
+        <MAX_MAP_GRID_WIDTH>10240</MAX_MAP_GRID_WIDTH>
+        <!--地图的最大格子高度-->
+        <MAX_MAP_GRID_HEIGHT>10240</MAX_MAP_GRID_HEIGHT>
+        <!--屏格子宽度-->
+        <SCREEN_GRID_WIDTH>210</SCREEN_GRID_WIDTH>
+        <!--屏格子高度-->
+        <SCREEN_GRID_HEIGHT>140</SCREEN_GRID_HEIGHT>
+        <!--宕机处理的等待时间(秒)-->
+        <CORE_THREAD_WAIT_TIME_IN_SEC>120</CORE_THREAD_WAIT_TIME_IN_SEC>
+		<!-- 日志打印级别 -->
+        <LOG_LEVEL>debug</LOG_LEVEL>
+        <!--服务器key,和平台验证充值,登陆用-->
+        <ZONE_VERIFY_KEY>24a4cf6bfb2c2fe6fcf6db4c07e8a5b4</ZONE_VERIFY_KEY>
+		<!-- 在线恢复体力值的间隔(毫秒) -->
+		<VITALITY_RECOVERY_INTERVAL_IN_MSEC>120000</VITALITY_RECOVERY_INTERVAL_IN_MSEC>
+        <!--重算负载均衡数值的时间-->
+        <RESET_CONN_USER_NUM_IN_SEC>300</RESET_CONN_USER_NUM_IN_SEC>
+        <!--每隔多少分钟广播关服公告-->
+        <NOTIFY_CLOSE_ZONE_INTERVAL_TIME_IN_MIN>5</NOTIFY_CLOSE_ZONE_INTERVAL_TIME_IN_MIN>
+    </Share>
+    <zoneServer>
+        <!--连接其他平台服务器,Admin服务器的服务器ID起始值-->
+        <MIN_CLIENT_CONN_ID>50000</MIN_CLIENT_CONN_ID>
+		<!--监控警告级别，只有大于等于此级别的警告才会记录-->
+		<MONITOR_ALERT_LEVEL>1</MONITOR_ALERT_LEVEL>
+        <!--服务器组延迟测试间隔时间(秒), 0为不开启-->
+        <SERVER_DELAY_TEST_INTERVAL>60</SERVER_DELAY_TEST_INTERVAL>
+        <!--检测匹配的时间间隔-->
+        <CHECK_MATCH_QUEUE_TIMER_IN_SEC>5</CHECK_MATCH_QUEUE_TIMER_IN_SEC>
+        <!--排行榜最大玩家数量-->
+        <USER_SEQUENCE_MAX_USER_NUM>200</USER_SEQUENCE_MAX_USER_NUM>
+        <!--匹配排行榜最大玩家数量-->
+        <RANK_ELO_SEQUENCE_MAX_USER_NUM>2000</RANK_ELO_SEQUENCE_MAX_USER_NUM>
+        <!--匹配初始的最大elo差值-->
+        <CHECK_MATCH_QUEUE_INIT_MAX_CAMP_ELO_DIFF>100</CHECK_MATCH_QUEUE_INIT_MAX_CAMP_ELO_DIFF>
+        <!--匹配每次放大elo差值的值-->
+        <CHECK_MATCH_QUEUE_ADD_MAX_CAMP_ELO_DIFF>100</CHECK_MATCH_QUEUE_ADD_MAX_CAMP_ELO_DIFF>
+        <!--匹配可以放大elo差值最大值-->
+        <CHECK_MATCH_QUEUE_MAX_CAMP_ELO_DIFF>1000</CHECK_MATCH_QUEUE_MAX_CAMP_ELO_DIFF>
+        <!--匹配队列等待的最长时间(秒)-->
+        <MAX_WAIT_IN_MATCH_QUEUE_TIME_IN_SEC>120</MAX_WAIT_IN_MATCH_QUEUE_TIME_IN_SEC>
+        <!--超出等待的最长时间后对允许的elo差值放大的参数-->
+        <EXCEED_WAIT_MATCH_QUEUE_MAX_TIME_ENLARGE_ELO_DIFF_PARAM>5</EXCEED_WAIT_MATCH_QUEUE_MAX_TIME_ENLARGE_ELO_DIFF_PARAM>
+        <!--匹配根据人数计算一次需要撮合的比赛数的参数-->
+        <CHECK_MATCH_QUEUE_TEAM_LIST_SIZE_DIV_PARAM>20</CHECK_MATCH_QUEUE_TEAM_LIST_SIZE_DIV_PARAM>
+        <!--匹配队列统计进入玩家的速度的时间段长度(秒)-->
+        <MATCH_QUEUE_ADD_USER_SPEED_STATICTICS_TIME_IN_SEC>30</MATCH_QUEUE_ADD_USER_SPEED_STATICTICS_TIME_IN_SEC>
+        <!--显示给玩家的最长等待时间(秒)-->
+        <MAX_EXPECT_AVERAGE_WAIT_TIME_IN_SEC>180</MAX_EXPECT_AVERAGE_WAIT_TIME_IN_SEC>
+    </zoneServer>
+    <logicServer>
+        <!--玩家存档时间(秒)-->
+        <SAVE_DATA_TIMER_IN_SEC>10</SAVE_DATA_TIMER_IN_SEC>
+        <!--玩家最大等级-->
+        <MAX_USER_LEVEL>90</MAX_USER_LEVEL>
+    </logicServer>
+    <dataServer>
+		<!-- 初始银两 -->
+		<INIT_SILVER>0</INIT_SILVER>
+		<!-- 初始钻石 -->
+		<INIT_DIAMOND>9999</INIT_DIAMOND>
+		<!-- 初始绑钻 -->
+		<INIT_BINDDIAMOND>0</INIT_BINDDIAMOND>
+		<!-- 邮件有效日期 -->
+		<MAX_MAIL_EFFECT_TIME_IN_DAY>30</MAX_MAIL_EFFECT_TIME_IN_DAY>
+    </dataServer>
+    <gatewayServer>
+        <!--离线保护的时间-->
+        <OFFLINE_PROTECT_TIME_IN_SEC>180</OFFLINE_PROTECT_TIME_IN_SEC>
+        <!--屏蔽字分组的字符串最大长度-->
+        <GROUP_KEY_STR_SIZE_IN_KB>15</GROUP_KEY_STR_SIZE_IN_KB>
+        <!--跨区时的等待时间-->
+        <WAIT_CHANGE_ZONE_TIME_IN_SEC>5</WAIT_CHANGE_ZONE_TIME_IN_SEC>
+        <!--跨区时的最大尝试次数-->
+        <MAX_CHANGE_ZONE_CONNECT_TIMES>3</MAX_CHANGE_ZONE_CONNECT_TIMES>
+        <!--需要重新同步时间的PING值波动幅度-->
+        <NEED_SYNC_TIME_PING_DIFF>35</NEED_SYNC_TIME_PING_DIFF>
+        <!--收到的客户端消息的最大长度(字节数)-->
+        <MAX_RECIEVE_USER_COMMAND_SIZE>4096</MAX_RECIEVE_USER_COMMAND_SIZE>
+        <!--登录会话的超时时间(秒)-->
+        <LOGIN_SESSION_TIME_OUT_IN_SEC>600</LOGIN_SESSION_TIME_OUT_IN_SEC>
+        <!--是否需要输出到syslog-->
+        <NEED_SYS_LOG>0</NEED_SYS_LOG>
+		<!-- 消息统计最大个数 -->
+		<COMMAND_COUNT_MAX_SIZE>0</COMMAND_COUNT_MAX_SIZE>
+		<!-- 消息统计存档定时器秒 -->
+		<SAVE_COMMAND_TIMER_IN_SEC>600</SAVE_COMMAND_TIMER_IN_SEC>
+		<!-- 消息统计相关连接类型 -->
+		<COMMAND_COUNT_CONN_TYPE>1;2;3;5;7;9;11;100</COMMAND_COUNT_CONN_TYPE>
+		<!-- 打开屏蔽字检查 -->
+		<OPEN_NAME_FILTER>0</OPEN_NAME_FILTER>
+    </gatewayServer>
+</Config>
+

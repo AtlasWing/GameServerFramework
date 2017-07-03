@@ -1,0 +1,6 @@
+META-INF/MANIFEST.MF
+test/jar/Bar.java
+test/jar/BarOrBuilder.java
+test/jar/Foo.java
+test/jar/FooOrBuilder.java
+test/jar/Outer.java

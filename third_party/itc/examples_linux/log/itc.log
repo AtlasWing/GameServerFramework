@@ -1,0 +1,167 @@
+[LM_INFO 2011-12-13 20:19:32.425108] log_level=INFO-WARNING-ERROR-DEBUG log_path=../log/itc.log cfgpath=../cfg/itc.xml
+[LM_DEBUG 2011-12-13 20:19:32.447108] userid=test secretkey=itc_client
+[LM_DEBUG 2011-12-13 20:19:32.453108] strcmd=CMD_REQ_GET_BALANCE cmd=0x0100
+[LM_DEBUG 2011-12-13 20:19:32.461108] strcmd=CMD_REQ_PREPAY cmd=0x0101
+[LM_DEBUG 2011-12-13 20:19:32.468108] strcmd=CMD_REQ_COMMIT cmd=0x0102
+[LM_DEBUG 2011-12-13 20:19:32.474108] strcmd=CMD_REQ_ROLLBACK cmd=0x0103
+[LM_DEBUG 2011-12-13 20:19:32.482108] strcmd=CMD_REQ_SAVE cmd=0x0104
+[LM_DEBUG 2011-12-13 20:19:32.488108] strcmd=CMD_REQ_PAY cmd=0x0105
+[LM_DEBUG 2011-12-13 20:19:32.495108] strcmd=CMD_REQ_ACCTINFO cmd=0x0106
+[LM_DEBUG 2011-12-13 20:19:32.501108] strcmd=CMD_REQ_TRANSFER cmd=0x0107
+[LM_DEBUG 2011-12-13 20:19:32.508108] strcmd=CMD_REQ_TRANSFER_BYORDER cmd=0x0108
+[LM_DEBUG 2011-12-13 20:19:32.516108] ip=127.0.0.1
+[LM_DEBUG 2011-12-13 20:19:32.521108]  
+[LM_INFO 2011-12-13 20:19:32.525108] tcp server listen at: :7100
+[LM_INFO 2011-12-13 20:19:32.533108] itcser start
+[LM_INFO 2011-12-13 20:20:15.339108] client(127.0.0.1:19833) connected
+[LM_INFO 2011-12-13 20:20:15.352108] recv from(127.0.0.1:19833)
+[LM_INFO 2011-12-13 20:20:15.361108] start get_balance: ip=127.0.0.1 ip_forward=127.0.0.1 uin=732945400
+[LM_INFO 2011-12-13 20:20:15.371108] end get_balance: ip=127.0.0.1 code=0 uin=732945400 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:20:46.995108] client(127.0.0.1:19833) closed
+[LM_INFO 2011-12-13 20:20:47.005108] client(127.0.0.1:19839) connected
+[LM_INFO 2011-12-13 20:20:47.014108] recv from(127.0.0.1:19839)
+[LM_INFO 2011-12-13 20:20:47.022108] start get_balance: ip=127.0.0.1 ip_forward=127.0.0.1 uin=732945400
+[LM_INFO 2011-12-13 20:20:47.035108] end get_balance: ip=127.0.0.1 code=0 uin=732945400 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:20:55.415108] recv from(127.0.0.1:19839)
+[LM_INFO 2011-12-13 20:20:55.422108] start get_balance: ip=127.0.0.1 ip_forward=127.0.0.1 uin=732945400
+[LM_INFO 2011-12-13 20:20:55.436108] end get_balance: ip=127.0.0.1 code=0 uin=732945400 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:21:06.311108] client(127.0.0.1:19839) closed
+[LM_INFO 2011-12-13 20:21:06.334108] client(127.0.0.1:19850) connected
+[LM_INFO 2011-12-13 20:21:06.344108] recv from(127.0.0.1:19850)
+[LM_INFO 2011-12-13 20:21:06.353108] start save: ip=127.0.0.1 ip_forward=127.0.0.2 uin=732945400 dstuin=732945400 amount=100 portal_seq=1 source=1 remark=1
+[LM_INFO 2011-12-13 20:21:06.372108] end save: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:52:40.805108] client(127.0.0.1:19850) closed
+[LM_INFO 2011-12-13 20:52:40.830108] client(127.0.0.1:20095) connected
+[LM_INFO 2011-12-13 20:52:40.842108] recv from(127.0.0.1:20095)
+[LM_INFO 2011-12-13 20:52:40.851108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:52:40.874108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:52:40.898108] recv from(127.0.0.1:20095)
+[LM_INFO 2011-12-13 20:52:40.905108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:52:40.921108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:14.533108] client(127.0.0.1:20095) closed
+[LM_INFO 2011-12-13 20:53:14.554108] client(127.0.0.1:20096) connected
+[LM_INFO 2011-12-13 20:53:14.568108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:14.578108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:14.594108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:14.613108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:14.619108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:14.635108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:19.603108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:19.609108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:19.625108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:19.643108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:19.650108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:19.664108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:22.741108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:22.761108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:22.795108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:22.815108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:22.822108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:22.836108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:24.823108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:24.832108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:24.858108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:24.885108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:24.894108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:24.914108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:26.743108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:26.761108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:26.786108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:26.814108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:26.823108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:26.838108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:28.655108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:28.665108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:28.688108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:28.706108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:28.712108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:28.726108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:30.547108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:30.554108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:30.574108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:30.595108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:30.602108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:30.619108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:32.391108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:32.403108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:32.430108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:32.448108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:32.455108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:32.469108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:34.245108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:34.255108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 20:53:34.274108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:34.293108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:34.298108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 20:53:34.315108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:36.196108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:36.206108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=test transinfo=prepay-rollback
+[LM_INFO 2011-12-13 20:53:36.226108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:36.244108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:36.250108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=test
+[LM_INFO 2011-12-13 20:53:36.264108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:40.118108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:40.127108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=test transinfo=prepay-rollback
+[LM_INFO 2011-12-13 20:53:40.154108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:40.180108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:40.190108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=test
+[LM_INFO 2011-12-13 20:53:40.207108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:47.156108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:47.163108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=test transinfo=prepay-rollback
+[LM_INFO 2011-12-13 20:53:47.185108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:47.205108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:47.212108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=test
+[LM_INFO 2011-12-13 20:53:47.226108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:51.380108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:51.392108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=test transinfo=prepay-rollback
+[LM_INFO 2011-12-13 20:53:51.413108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:51.432108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:51.439108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=test
+[LM_INFO 2011-12-13 20:53:51.456108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:53:57.283108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:57.289108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=test transinfo=prepay-rollback
+[LM_INFO 2011-12-13 20:53:57.306108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:53:57.324108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:53:57.331108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=test
+[LM_INFO 2011-12-13 20:53:57.345108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 20:54:03.443108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:54:03.449108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=100 item_id=101 timeout=5 source=test transinfo=prepay-rollback
+[LM_INFO 2011-12-13 20:54:03.467108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 20:54:03.486108] recv from(127.0.0.1:20096)
+[LM_INFO 2011-12-13 20:54:03.493108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=100 billno=test100 source=test
+[LM_INFO 2011-12-13 20:54:03.509108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 21:39:15.310108] log_level=INFO-WARNING-ERROR-DEBUG log_path=../log/itc.log cfgpath=../cfg/itc.xml
+[LM_DEBUG 2011-12-13 21:39:15.326108] userid=test secretkey=itc_client
+[LM_DEBUG 2011-12-13 21:39:15.332108] strcmd=CMD_REQ_GET_BALANCE cmd=0x0100
+[LM_DEBUG 2011-12-13 21:39:15.340108] strcmd=CMD_REQ_PREPAY cmd=0x0101
+[LM_DEBUG 2011-12-13 21:39:15.347108] strcmd=CMD_REQ_COMMIT cmd=0x0102
+[LM_DEBUG 2011-12-13 21:39:15.354108] strcmd=CMD_REQ_ROLLBACK cmd=0x0103
+[LM_DEBUG 2011-12-13 21:39:15.361108] strcmd=CMD_REQ_SAVE cmd=0x0104
+[LM_DEBUG 2011-12-13 21:39:15.367108] strcmd=CMD_REQ_PAY cmd=0x0105
+[LM_DEBUG 2011-12-13 21:39:15.375108] strcmd=CMD_REQ_ACCTINFO cmd=0x0106
+[LM_DEBUG 2011-12-13 21:39:15.381108] strcmd=CMD_REQ_TRANSFER cmd=0x0107
+[LM_DEBUG 2011-12-13 21:39:15.388108] strcmd=CMD_REQ_TRANSFER_BYORDER cmd=0x0108
+[LM_DEBUG 2011-12-13 21:39:15.397108] ip=127.0.0.1
+[LM_DEBUG 2011-12-13 21:39:15.402108]  
+[LM_INFO 2011-12-13 21:39:15.409108] tcp server listen at: :7100
+[LM_INFO 2011-12-13 21:39:15.417108] itcser start
+[LM_INFO 2011-12-13 21:39:44.256108] client(127.0.0.1:20486) connected
+[LM_INFO 2011-12-13 21:39:44.267108] recv from(127.0.0.1:20486)
+[LM_INFO 2011-12-13 21:39:44.276108] start get_balance: ip=127.0.0.1 ip_forward=127.0.0.1 uin=732945400
+[LM_INFO 2011-12-13 21:39:44.288108] end get_balance: ip=127.0.0.1 code=0 uin=732945400 balance=100 errmsg=
+[LM_INFO 2011-12-13 21:40:05.656108] client(127.0.0.1:20486) closed
+[LM_INFO 2011-12-13 21:40:05.667108] client(127.0.0.1:20487) connected
+[LM_INFO 2011-12-13 21:40:05.674108] recv from(127.0.0.1:20487)
+[LM_INFO 2011-12-13 21:40:05.682108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.3 uin=732945400 amount=100 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 21:40:05.701108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 21:40:05.721108] recv from(127.0.0.1:20487)
+[LM_INFO 2011-12-13 21:40:05.727108] start commit: ip=127.0.0.1 ip_forward=127.0.0.4 uin=732945400 amount=100 billno=test100 source=107
+[LM_INFO 2011-12-13 21:40:05.742108] end commit: ip=127.0.0.1 cod=0 uin=732945400 errmsg=
+[LM_INFO 2011-12-13 21:40:40.143108] client(127.0.0.1:20487) closed
+[LM_INFO 2011-12-13 21:40:40.168108] client(127.0.0.1:20491) connected
+[LM_INFO 2011-12-13 21:40:40.178108] recv from(127.0.0.1:20491)
+[LM_INFO 2011-12-13 21:40:40.186108] start prepay: ip=127.0.0.1 ip_forward=127.0.0.5 uin=732945400 amount=10 item_id=101 timeout=5 source=107 transinfo=test
+[LM_INFO 2011-12-13 21:40:40.207108] end prepay: ip=127.0.0.1 code=0 uin=732945400 billno=test100 balance=100 errmsg=
+[LM_INFO 2011-12-13 21:40:40.232108] recv from(127.0.0.1:20491)
+[LM_INFO 2011-12-13 21:40:40.240108] start rollback: ip=127.0.0.1 ip_forward=127.0.0.6 uin=732945400 amount=10 billno=test100 source=107
+[LM_INFO 2011-12-13 21:40:40.256108] end rollback: ip=127.0.0.1 code=0 uin=732945400 errmsg=

@@ -1,0 +1,13 @@
+package protocol.ServerRun;
+
+message ParamData
+{
+    required string paramName   =   1;
+    required string paramValue  =   2;
+};
+
+message ScheduleParamData
+{
+    repeated ParamData  paramList   =   1;
+    optional uint64     configID    =   2;
+};

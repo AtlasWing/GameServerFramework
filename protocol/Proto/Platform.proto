@@ -1,0 +1,44 @@
+package protocol.platform;
+
+message QQGameLoginData
+{
+	optional string openID			=	1;
+	optional string openKey			=	2;
+	optional string pfKey			=	3;
+    optional bool   isBlueVip       =   4;
+    optional bool   isBlueYearVip   =   5;
+    optional uint32 blueVipLevel    =   6;
+    optional string nickName        =   7;
+    optional string gender          =   8;
+    optional bool isHighBlueVip     =   9;
+};
+
+message LoginSessionData
+{
+    required uint32 clientID   =    1;///< 客户端连接ID
+    required string accountName =   2;///< 账号
+    required bool   isAdult     =   3;///< 是否成人
+    required uint32 channelID   =   4;///< 渠道
+    required uint32 netType     =   5;///< 网络类型
+    required uint32 platformType=  6;///< 来源平台ID
+	optional QQGameLoginData qqGameLoginData=7;///<qq游戏大厅的登陆数据
+}
+
+message LoginFailData
+{
+    required uint32 clientID   =    1;///< 客户端连接ID
+    required uint32 errorCode  =    2;///< 失败枚举command::platform::S2C_NotifyLoginErrorCommand::NONE
+};
+
+message LoginSuccData
+{
+    required uint32 clientID   =    1;///< 客户端连接ID
+    required string accountName =   2;///< 账号
+    required string gatewayIP   =   3;///< 网关IP
+    required uint32 gatewayPort =   4;///< 网关端口
+};
+
+message ZoneState
+{
+	required uint32 onlineNum	=	1;///< 在线人数
+};

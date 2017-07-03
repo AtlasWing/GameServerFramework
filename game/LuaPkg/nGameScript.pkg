@@ -1,0 +1,25 @@
+$cfile "../../../game/nEvent.h"
+$cfile "../../../game/nScriptObj.h"
+
+$#include "../../../game/nGameScript.h" 
+
+/// @brief	输出调试信息
+void server->debug @ c_debug(const char* info);							
+void server->info @ c_info(const char* info);							
+void server->warn @ c_warn(const char* info);							
+void server->error @ c_error(const char* info);							
+
+/// @brief	断言失败
+void c_assertFail(const char* info);
+
+/// @brief	获得脚本根目录
+const char* c_getRootDir();
+
+/// @brief	加载一个脚本文件
+bool server->scriptService->doFile @ c_doFile(const char* filename);
+
+/// @brief	获得文件夹下的所有文件名
+const char* c_getFileListByFolder(const char* folder);
+
+const DWORD server->time().sec @ c_getTimeInSec();
+
